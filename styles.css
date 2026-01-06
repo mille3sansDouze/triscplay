@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+:root {
+	--c1: #32004F;
+	--c2: #7323A8;
+	--c3: #E50085;
+	--c4: #FF5E5B;
+	--c5: #FFAC93;
+}
+
+body {
+	background-color: var(--c1);
+
+}
+p {
+	font-family: "VT323", monospace;
+  	font-weight: 400;
+  	font-style: normal;
+}
+
+.header {
+	background-color: var(--c2);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 1000;
+	padding: 0.5rem 1rem;	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+}
+
+
+.h1 {
+  	font-family: "Doto", sans-serif;
+  	font-weight: 500;
+	font-size: 1.8rem;
+  	text-align: center;
+  	flex: 1;  
+}
+
+.logo {
+	 display: flex;
+  	align-items: center;
+}
+.logo img {
+  	width: 75px;
+  	height: auto;
+}
+
+.button-connexion {
+  padding: 0.5rem 1rem;
+  background-color: var(--c1);
+  color: var(--c5);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Doto", sans-serif;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.button-connexion:hover {
+  background-color: var(--c5-hover);
+}
+
+
+
+.footer {
+	background-color: var(--c2);
+	
+	bottom: 00px;
+	left: 0px;
+	right: 0px;
+	z-index: 500;
+	padding: 0.5rem 1rem;	
+	display: flex;
+}
+
+
