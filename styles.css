@@ -1,0 +1,26 @@
+:root {
+	--c1: #32004F;
+	--c2: #7323A8;
+	--c3: #E50085;
+	--c4: #FF5E5B;
+	--c5: #FFAC93;
+}
+
+
+
+header {
+	background-color: #393e46;
+	position: fixed;
+	top: 10px;
+	left: 150px;
+	right: 150px;
+	z-index: 1000;
+	padding: 0.5rem 1rem;
+	transition: all 0.3s ease;
+	border: solid 3px #222831;
+	border-radius: 50px; 
+
+}
+
+
+
