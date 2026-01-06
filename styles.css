@@ -36,37 +36,90 @@ p {
 .h1 {
   	font-family: "Doto", sans-serif;
   	font-weight: 500;
-	font-size: 1.8rem;
+	font-size: 2.8rem;
   	text-align: center;
-  	flex: 1;  
+  	flex: 1; 
+	color: var(--c5);
+	transition: color 0.4s ease;
+}
+.h1:hover{
+	color: var(--c3);
 }
 
 .logo {
-	 display: flex;
+	border-radius: 5px;
+	display: flex;
   	align-items: center;
+	transition: background-color 0.4s ease;
+}
+.logo:hover{
+	background-color: var(--c3);
 }
 .logo img {
-  	width: 75px;
+  	width: 65px;
   	height: auto;
 }
 
 .button-connexion {
-  padding: 0.5rem 1rem;
-  background-color: var(--c1);
-  color: var(--c5);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: "Doto", sans-serif;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
+	text-decoration: none;
+  	padding: 0.5rem 1rem;
+ 	background-color: var(--c1);
+  	color: var(--c5);
+ 	border: none;
+  	border-radius: 8px;
+ 	cursor: pointer;
+  	font-family: "Doto", sans-serif;
+ 	font-weight: 500;
+ 	transition: background-color 0.4s ease;
 }
 
 .button-connexion:hover {
-  background-color: var(--c5-hover);
+  background-color: var(--c3);
+}
+
+.fyp {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--c2);
+	border-radius: 50px;
+	padding: 0.7rem;
+	margin: 2rem auto;
+	width: 40%;
+	gap: 0rem;
+}
+
+.search-bar {
+	flex: 0.95;
+	padding: 0.5rem 0.8rem;
+	border: 1px solid var(--c1);
+	border-radius: 20px;
+	outline: none;
+	font-size: 1rem;
+	font-family: "Doto", sans-serif;
+  	font-weight: 1000;
+	background-color: var(--c3);
+}
+.search-bar:focus {
+  border-color: var(--c3);
+  box-shadow: 0 0 5px var(--c3);
+  background-color: var(--c4);
 }
 
 
+.search-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--c3);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: var(--c4);
+}
 
 .footer {
 	background-color: var(--c2);
