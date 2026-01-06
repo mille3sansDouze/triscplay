@@ -6,20 +6,18 @@
 	--c5: #FFAC93;
 }
 
-
+body {
+	background-color: var(--c1);
+}
 
 header {
-	background-color: #393e46;
+	background-color: var(--c3);
 	position: fixed;
 	top: 10px;
 	left: 150px;
 	right: 150px;
 	z-index: 1000;
-	padding: 0.5rem 1rem;
-	transition: all 0.3s ease;
-	border: solid 3px #222831;
-	border-radius: 50px; 
-
+	padding: 0.5rem 1rem;	
 }
 
 
