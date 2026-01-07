@@ -50,6 +50,23 @@ p {
   	height: auto;
 }
 
+.button-connexion {
+	text-decoration: none;
+  	padding: 0.5rem 1rem;
+ 	background-color: var(--c1);
+  	color: var(--c5);
+ 	border: none;
+  	border-radius: 8px;
+ 	cursor: pointer;
+  	font-family: "Doto", sans-serif;
+ 	font-weight: 500;
+ 	transition: background-color 0.4s ease;
+}
+
+.button-connexion:hover {
+  background-color: var(--c3);
+}
+
 div.page_category {
 	margin-top: 100px;
 	color: var(--c5);
