@@ -57,17 +57,6 @@ div.page_category {
 	text-align: center;
 }
 
-div.social {
-	color: var(--c4);
-	background-color: var(--c2);
-	border: var(--c2);
-	width: 15%;
-	font-family: "VT323", monospace;
-	display: flex;
-	border-radius: 10px;
-	padding: 10px;
-}
-
 div.game_card{
 	background-color: var(--c2);
 	color: var(--c4);
@@ -79,9 +68,49 @@ div.game_card{
 	font-family: "VT323", monospace;
 	font-size: 20px;
 	display: flex;
+    flex-direction:column;
 }
 
 div.card_slot{
 	margin: 5px;
 	color: var(--c1);
+}
+
+.home-layout{
+	display: flex;
+}
+
+.home-sidebar {
+	position: fixed;
+	top: 8rem;
+	left: 0px;
+	width: 240px;
+	height: calc(100vh - 60px);
+	background-color: var(--c3);
+	padding: 1rem 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	overflow-y: auto;
+}
+
+.home-sidebar-title {
+	font-family: "Doto", sans-serif;
+	font-size: 2rem;
+	text-align: center;
+	margin: 0.5rem;
+}
+
+.home-sidebar-items {
+	padding: 1rem 1rem;
+	border-radius: 13px;
+	cursor: pointer;
+	font-family: "VT323", monospace;
+	background-color: var(--c2);
+	transition: background-color 0.25s ease;
+}
+
+.home-sidebar-items:hover{
+	background-color: var(--c4);
+
 }
