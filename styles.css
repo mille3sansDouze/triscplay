@@ -10,7 +10,6 @@
 
 header {
 	background-color: #393e46;
-	position: fixed;
 	top: 10px;
 	left: 150px;
 	right: 150px;
@@ -22,5 +21,33 @@ header {
 
 }
 
+.title{
+	text-align : center;
+	justify-content: center;/* mets a droite au centre se connecter */
+}
+.email_id{
+	text-align : left;
+	margin:20px 20px; 
+}
+.mdp_oublie{
+	text-align : right;
+	justify-content: right; /* mets a droite l'image oeil */
+	margin:20px 20px; 
+ 
+}
+.zone_texte{
+	width: 1000px;   
+    height: 50px;
+	margin:20px auto; 
+	background-color: #FFAC93;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+
+}
+.lien {
+  text-decoration: none;  
+  color: blue;              
+}
 
 
