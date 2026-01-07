@@ -66,11 +66,39 @@ p {
   background-color: var(--c5-hover);
 }
 
+div.page_category {
+	margin-top: 100px;
+	color: var(--c5);
+	font-family: "VT323", monospace;
+	text-align: center;
+}
 
+div.social {
+	color: var(--c4);
+	background-color: var(--c2);
+	border: var(--c2);
+	width: 300px;
+	font-family: "VT323", monospace;
+	display: flex;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+div.game_card{
+	background-color: var(--c2);
+	display: flex;
+	margin-left: 350px;
+	margin-right: 0px;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+div.card_slot{
+	margin: 5px;
+}
 
 .footer {
 	background-color: var(--c2);
-	
 	bottom: 00px;
 	left: 0px;
 	right: 0px;
