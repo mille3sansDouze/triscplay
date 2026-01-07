@@ -50,30 +50,38 @@ p {
   	height: auto;
 }
 
-.button-connexion {
-  padding: 0.5rem 1rem;
-  background-color: var(--c1);
-  color: var(--c5);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: "Doto", sans-serif;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
+div.page_category {
+	margin-top: 100px;
+	color: var(--c5);
+	font-family: "VT323", monospace;
+	text-align: center;
 }
 
-.button-connexion:hover {
-  background-color: var(--c5-hover);
-}
-
-.footer {
+div.social {
+	color: var(--c4);
 	background-color: var(--c2);
-	bottom: 00px;
-	left: 0px;
-	right: 0px;
-	z-index: 500;
-	padding: 0.5rem 1rem;	
+	border: var(--c2);
+	width: 15%;
+	font-family: "VT323", monospace;
+	display: flex;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+div.game_card{
+	background-color: var(--c2);
+	color: var(--c4);
+	margin-right: 0px;
+	border-radius: 10px;
+	padding: 10px;
+	width: 75%;
+	margin-left: 20%;
+	font-family: "VT323", monospace;
+	font-size: 20px;
 	display: flex;
 }
 
-
+div.card_slot{
+	margin: 5px;
+	color: var(--c1);
+}
