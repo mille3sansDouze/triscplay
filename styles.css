@@ -10,8 +10,8 @@
 
 body {
 	background-color: var(--c1);
-
 }
+
 p {
 	font-family: "VT323", monospace;
   	font-weight: 400;
@@ -60,6 +60,56 @@ p {
   	height: auto;
 }
 
+.home-layout{
+	display: flex;
+}
+
+.home-sidebar {
+	position: fixed;
+	top: 8rem;
+	left: 0px;
+	width: 240px;
+	height: calc(100vh - 60px);
+	background-color: var(--c3);
+	padding: 1rem 0.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	overflow-y: auto;
+}
+
+.home-sidebar-title {
+	font-family: "Doto", sans-serif;
+	font-size: 2rem;
+	text-align: center;
+	margin: 0.5rem;
+}
+
+.home-sidebar-items {
+	padding: 1rem 1rem;
+	border-radius: 13px;
+	cursor: pointer;
+	font-family: "VT323", monospace;
+	background-color: var(--c2);
+	transition: background-color 0.25s ease;
+}
+
+.home-sidebar-items:hover{
+	background-color: var(--c4);
+
+}
+
+.home-content{
+	margin-top: 8rem;
+	margin-left: 240px;
+	width: calc(100vw - 240px);
+	min-height: calc(100vh - 8rem);
+
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	align-items: center;
+}
 .button-connexion {
 	text-decoration: none;
   	padding: 0.5rem 1rem;
@@ -77,7 +127,7 @@ p {
   background-color: var(--c3);
 }
 
-.fyp {
+.home-search-div {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -85,7 +135,8 @@ p {
 	border-radius: 50px;
 	padding: 0.7rem;
 	margin: 2rem auto;
-	width: 40%;
+	width: 100%;
+	max-width: 500px;
 	gap: 0rem;
 }
 
@@ -121,15 +172,34 @@ p {
   background-color: var(--c4);
 }
 
-.footer {
-	background-color: var(--c2);
-	
-	bottom: 00px;
-	left: 0px;
-	right: 0px;
-	z-index: 500;
-	padding: 0.5rem 1rem;	
+.home-feed {
+	width: 100%;
+	max-width: 500px;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+	padding: 2rem 0;
+
+}
+
+.home-card {
+	width: 100%;
+	aspect-ratio: 9/16;
+	background-color: var(--c4);
+	border-radius: 20px;
+
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 15);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+.home-footer {
+	background-color: var(--c2);
+	margin-top: auto;
+	padding: 1rem;
+	text-align: center;
+	border-radius: 3px;
 }
 
 
