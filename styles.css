@@ -178,26 +178,115 @@ p {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1.5rem;
-	padding: 2rem 0;
+	gap: 4rem;
+	padding: 2rem ;
 
 }
 
 .home-card {
 	width: 100%;
-	aspect-ratio: 9/16;
+	max-width: 500px;
 	background-color: var(--c4);
 	border-radius: 20px;
 
-	box-shadow: 0 8px 25px rgba(0, 0, 0, 15);
+	box-shadow: 0 0px 35px var(--c3);
 	overflow: hidden;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	
 }
 .home-footer {
 	background-color: var(--c2);
 	margin-top: auto;
-	padding: 1rem;
+	padding-top: 5rem;
 	text-align: center;
 	border-radius: 3px;
+	bottom: 0px;
+	width: 100%;
+	margin-bottom: 0px;
+	margin-top: 5rem;
+}
+.home-card-img {
+	width: 150px;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 12px;
+	background-color: var(--c2);
+	display: flex;
+	
+}
+
+.home-card-center {
+	background-color: aqua;
+	position: relative;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+
+}
+
+.home-card-title {
+	font-family: "Doto", sans-serif;
+	font-size: 1.2rem;
+	margin: 0;
+
+}
+
+.home-card-description {
+	font-family: "VT323", monospace;
+	font-size: 1rem;
+	margin: 0;
+}
+
+.home-card-scoreboard {
+	display: flex;
+	align-items: center;
+}
+
+.home-card-scoreboard-score {
+	display: flex;
+	background-color: var(--c2);
+	border-radius: 14px;
+	padding: 0.6rem, 0.8rem;
+	text-align: center;
+	min-width: 70px;
+
+}
+.home-card-score-value {
+	display: block;
+	font-family: "Doto", sans-serif;
+	font-size: 1.3rem;
+}
+.home-card-score-label {
+	font-size: 0.8rem;
+}
+.home-card-left {
+
+}
+
+div.page_category {
+	margin-top: 150px;
+	color: var(--c5);
+	font-family: "VT323", monospace;
+	text-align: center;
+}
+
+div.game_card{
+	background-color: var(--c2);
+	color: var(--c4);
+	margin-right: 0px;
+	border-radius: 10px;
+	padding: 10px;
+	width: 75%;
+	margin-left: 20%;
+	font-family: "VT323", monospace;
+	font-size: 20px;
+	display: flex;
+    flex-direction:column;
+}
+
+div.card_slot{
+	margin: 5px;
+	color: var(--c1);
 }
