@@ -185,17 +185,93 @@ p {
 }
 
 .home-card {
-	width: 100%;
-	max-width: 500px;
-	background-color: var(--c4);
+	width: 200%;
+	max-width: 1000px;
+	background-color: var(--c2);
 	border-radius: 20px;
-
 	box-shadow: 0 0px 35px var(--c3);
 	overflow: hidden;
 	display: flex;
 	flex-direction: row;
-	
+	justify-content: space-around;
+	padding-bottom: 3rem;	
 }
+
+.home-card-img {
+	width: 150px;
+	height: 150px;
+	border-radius: 12px;
+	background-color: var(--c2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.home-card-center {
+	background-color: var(--c3);
+	position: relative;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	border-radius: 20px;
+	padding: 2rem;
+}
+.home-card-left {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 3rem;
+}
+.home-card-title {
+	font-family: "Doto", sans-serif;
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.home-card-description {
+	font-family: "VT323", monospace;
+	font-size: 1rem;
+	margin: 0;
+	text-align: center;
+}
+
+.home-card-scoreboard {
+	display: flex;
+	align-items: center;
+	color: var(--c5);
+	padding-top: 5rem;
+}
+
+.home-scoreboard-table {
+	border-collapse: collapse;
+	border: 2px solid var(--c3);
+	font-family: "VT323", monospace;
+	font-size: 2rem;
+}
+
+.home-scoreboard-tfoot {
+	background-color: var(--c3);
+}
+
+.home-scoreboard-table td, th {
+	border: 1px solid var(--c3);
+}
+.home-scoreboard-table td:last-of-type {
+	text-align: center;
+}
+
+.home-scoreboard-table tbody> tr:nth-of-type(even) {
+	background-color: var(--c1);
+}
+.home-scoreboard-tfoot th {
+	text-align: right;
+}
+.home-scoreboard-tfoot td {
+	font-weight: bold;
+}
+
 .home-footer {
 	background-color: var(--c2);
 	margin-top: auto;
@@ -206,64 +282,6 @@ p {
 	width: 100%;
 	margin-bottom: 0px;
 	margin-top: 5rem;
-}
-.home-card-img {
-	width: 150px;
-	height: 150px;
-	object-fit: cover;
-	border-radius: 12px;
-	background-color: var(--c2);
-	display: flex;
-	
-}
-
-.home-card-center {
-	background-color: aqua;
-	position: relative;
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	gap: 0.3rem;
-
-}
-
-.home-card-title {
-	font-family: "Doto", sans-serif;
-	font-size: 1.2rem;
-	margin: 0;
-
-}
-
-.home-card-description {
-	font-family: "VT323", monospace;
-	font-size: 1rem;
-	margin: 0;
-}
-
-.home-card-scoreboard {
-	display: flex;
-	align-items: center;
-}
-
-.home-card-scoreboard-score {
-	display: flex;
-	background-color: var(--c2);
-	border-radius: 14px;
-	padding: 0.6rem, 0.8rem;
-	text-align: center;
-	min-width: 70px;
-
-}
-.home-card-score-value {
-	display: block;
-	font-family: "Doto", sans-serif;
-	font-size: 1.3rem;
-}
-.home-card-score-label {
-	font-size: 0.8rem;
-}
-.home-card-left {
-
 }
 
 div.page_category {
@@ -291,3 +309,4 @@ div.card_slot{
 	margin: 5px;
 	color: var(--c1);
 }
+
