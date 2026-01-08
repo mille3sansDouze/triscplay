@@ -10,18 +10,8 @@
 
 body {
 	background-color: var(--c1);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-}
-=======
 }
 
->>>>>>> game_page
-=======
-}
-
->>>>>>> 486f0c41a5d3eb8b28ce4adff1037b428f361476
 p {
 	font-family: "VT323", monospace;
   	font-weight: 400;
@@ -42,21 +32,16 @@ p {
 	
 }
 
-
 .h1 {
   	font-family: "Doto", sans-serif;
   	font-weight: 500;
-<<<<<<< HEAD
-<<<<<<< HEAD
-	font-size: 1.8rem;
-=======
 	font-size: 2.8rem;
->>>>>>> 486f0c41a5d3eb8b28ce4adff1037b428f361476
   	text-align: center;
   	flex: 1; 
 	color: var(--c5);
 	transition: color 0.4s ease;
 }
+
 .h1:hover{
 	color: var(--c3);
 }
@@ -93,52 +78,6 @@ p {
 	overflow-y: auto;
 }
 
-<<<<<<< HEAD
-=======
-	font-size: 2.8rem;
-  	text-align: center;
-  	flex: 1; 
-	color: var(--c5);
-	transition: color 0.4s ease;
-}
-.h1:hover{
-	color: var(--c3);
-}
-
-.logo {
-	border-radius: 5px;
-	display: flex;
-  	align-items: center;
-	transition: background-color 0.4s ease;
-}
-.logo:hover{
-	background-color: var(--c3);
-}
-.logo img {
-  	width: 65px;
-  	height: auto;
-}
-
-.home-layout{
-	display: flex;
-}
-
-.home-sidebar {
-	position: fixed;
-	top: 8rem;
-	left: 0px;
-	width: 240px;
-	height: calc(100vh - 60px);
-	background-color: var(--c3);
-	padding: 1rem 0.5rem;
-	display: flex;
-	flex-direction: column;
-	gap: 0.3rem;
-	overflow-y: auto;
-}
-
-=======
->>>>>>> 486f0c41a5d3eb8b28ce4adff1037b428f361476
 .home-sidebar-title {
 	font-family: "Doto", sans-serif;
 	font-size: 2rem;
@@ -171,6 +110,7 @@ p {
 	padding: 1rem;
 	align-items: center;
 }
+
 .button-connexion {
 	text-decoration: none;
   	padding: 0.5rem 1rem;
@@ -325,7 +265,6 @@ p {
 .home-card-left {
 
 }
-<<<<<<< HEAD
 
 div.page_category {
 	margin-top: 150px;
@@ -352,6 +291,3 @@ div.card_slot{
 	margin: 5px;
 	color: var(--c1);
 }
->>>>>>> game_page
-=======
->>>>>>> 486f0c41a5d3eb8b28ce4adff1037b428f361476
