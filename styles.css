@@ -12,7 +12,7 @@ body {
   background-color: var(--c1);
 
   background-image: radial-gradient(
-	var(--c2) 1px,
+	var(--c2) 1.2px,
     transparent 1px
   );
 
@@ -55,6 +55,14 @@ p {
   	flex: 1; 
 	color: var(--c5);
 	transition: color 0.4s ease;
+
+	
+	
+}
+
+#indextriscplay {
+	padding-left: 9.7rem;
+	
 }
 
 .h1:hover{
