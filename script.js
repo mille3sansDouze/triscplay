@@ -21,7 +21,7 @@ function login() {
 
         const aadminbtn = document.createElement("a")
         aadminbtn.textContent = "Admin Panel"
-        aadminbtn.setAttribute("href", "https://youtu.be/dQw4w9WgXcQ?si=sptKy3dsGIbUCVnz")
+        aadminbtn.setAttribute("href", "admin_page.html")
 
         adminbtn.appendChild(aadminbtn)
         document.body.appendChild(adminbtn)
@@ -52,7 +52,7 @@ if (register === "y" && name) {
 
         const aadminbtn = document.createElement("a")
         aadminbtn.textContent = "Admin Panel"
-        aadminbtn.setAttribute("href", "https://youtu.be/dQw4w9WgXcQ?si=sptKy3dsGIbUCVnz")
+        aadminbtn.setAttribute("href", "admin_page.html")
 
         adminbtn.appendChild(aadminbtn)
         document.body.appendChild(adminbtn)

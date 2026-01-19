@@ -724,9 +724,41 @@ margin-top: 150px;
 .admin_cell div {
 	margin: 1rem
 }
+
+.delBtn{
+	text-decoration: none;
+  	padding: 0.5rem;
+ 	background-color: var(--c4);
+  	color: var(--c1);
+  	border-radius: 8px;
+ 	cursor: pointer;
+  	font-family: "Doto", sans-serif;
+ 	font-weight: 500;
+	font-size: 1rem;
+	max-width: 500px;
+ 	transition: background-color 0.4s ease;
+	border: solid 2px var(--c3);	
+	font-size: 1.5rem;
+	max-width: 500px;
+ 	transition: background-color 0.4s ease;
+	border: solid 2px var(--c3);	
+}
+
 .editBtn{
 	text-decoration: none;
   	padding: 0.5rem;
  	background-color: var(--c1);
-  	color: var(--c5);
+  	color: var(--c4);
+  	border-radius: 8px;
+ 	cursor: pointer;
+  	font-family: "Doto", sans-serif;
+ 	font-weight: 500;
+	font-size: 1rem;
+	max-width: 500px;
+ 	transition: background-color 0.4s ease;
+	border: solid 2px var(--c3);	
+	font-size: 1.5rem;
+	max-width: 500px;
+ 	transition: background-color 0.4s ease;
+	border: solid 2px var(--c3);	
 }
