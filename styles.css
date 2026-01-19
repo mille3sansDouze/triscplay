@@ -94,7 +94,7 @@ p {
   	font-family: "Doto", sans-serif;
  	font-weight: 500;
  	transition: background-color 0.4s ease;
-	border: solid 2px var(--c3);
+	border: solid 2px var(--c3);		
 }
 .button-home {
 	text-decoration: none;
@@ -456,3 +456,52 @@ div.card_slot{
 	color: var(--c1);
 }
 
+
+/* CONNEXION PAGE ====================== */
+
+
+
+
+
+
+#connexion-title {
+	margin-top: 12rem;
+	color: var(--c3);
+	font-family: "VT323", monospace;
+	text-align: center;
+	
+}
+
+.connexion-div{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0.5rem 15rem;
+}
+.connexion-texte{
+	font-family: "VT323", monospace;
+	color: var(--c4)
+}
+.barre-saisie{
+	color: var(--c4)
+}
+.mdp-oublie{
+	font-family: "VT323", monospace;
+	color: var(--c4);
+	text-align: right;
+}
+.input-connexion {
+    flex: 0.95;
+	padding: 0.5rem 0.8rem;
+	border: 1px solid var(--c1);
+	border-radius: 10px;
+	outline: none;
+	font-size: 1rem;
+	font-family: "Doto", sans-serif;
+  	font-weight: 1000;
+	background-color: var(--c3);
+}
+
+.margin{
+	margin-top: 50px;
+}
