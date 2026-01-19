@@ -32,7 +32,8 @@ function login() {
 del.addEventListener("click", () => {
     localStorage.clear()
     hello.textContent = ""
-    alert("Veuillez actualiser la page pour bien enregistrer tout les changements")
+    window.location.reload();
+    
 })
 
 // au chargement de la page
