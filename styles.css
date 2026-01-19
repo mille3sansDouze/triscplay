@@ -326,6 +326,8 @@ p {
 	font-family: "VT323", monospace;
 	background-color: var(--c2);
 	transition: background-color 0.25s ease;
+	text-decoration: none;
+	color: var(--c1);
 }
 
 .home-sidebar-items:hover{
@@ -415,6 +417,30 @@ p {
 	padding-bottom: 3rem;	
 }
 
+.home-game-button {
+  	padding: 0.5rem 1rem; 
+	background-color: var(--c3);
+	border: solid 1px var(--c3);
+  	border-radius: 1rem;
+ 	cursor: pointer;
+  	font-family: "Doto", sans-serif;
+ 	font-weight: 600;
+	font-size: 1.8rem;
+ 	transition: background-color 0.4s ease;
+}
+
+.home-game-button:hover {
+	background-color: var(--c2);
+}
+.home-game-button a {
+	text-decoration: none;
+	color: var(--c1);
+	font-size: 1.5rem;
+
+}
+
+
+
 .home-card-img {
 	width: 150px;
 	height: 150px;
@@ -503,6 +529,58 @@ p {
 } 
 
 
+#home-addbtn{
+	position: fixed;
+	bottom: 3rem;
+	right: 3rem;
+	padding: 0.5rem 1rem; 
+
+	background-color: var(--c3);
+	border: solid 1px var(--c3);
+  	border-radius: 1rem;
+ 	cursor: pointer;
+  	font-family: "Doto", sans-serif;
+ 	font-weight: 600;
+	font-size: 1.8rem;
+ 	transition: background-color 0.4s ease;
+}
+
+
+.btnadmin{
+	position: fixed;
+	bottom: 7rem;
+	right: 3rem;
+	padding: 0.5rem 1rem; 
+
+	background-color: var(--c3);
+	border: solid 1px var(--c3);
+  	border-radius: 1rem;
+ 	cursor: pointer;
+  	font-family: "Doto", sans-serif;
+ 	font-weight: 600;
+	font-size: 1.8rem;
+ 	transition: background-color 0.4s ease;
+}
+.btnadmin:hover {
+	background-color: var(--c4);
+}
+
+.btnadmin a {
+	text-decoration: none;
+	color: var(--c1);
+	font-size: 1.5rem;
+}
+
+#home-addbtn:hover {
+	background-color: var(--c4);
+}
+#home-addbtn a {
+	text-decoration: none;
+	color: var(--c1);
+	font-size: 1.5rem;
+
+}
+
 /* GAME PAGE AND PROFILE PAGE ================================================ */
 
 div.page_category {
@@ -524,6 +602,7 @@ div.game_card{
 	font-size: 20px;
 	display: flex;
     flex-direction:column;
+	box-shadow: 0 0px 35px var(--c3);
 }
 
 div.card_slot{
@@ -550,8 +629,10 @@ div.card_slot{
 .connexion-div{
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	align-items: center;
 	padding: 0.5rem 15rem;
+
+
 }
 .connexion-texte{
 	font-family: "VT323", monospace;
@@ -575,8 +656,32 @@ div.card_slot{
 	font-family: "Doto", sans-serif;
   	font-weight: 1000;
 	background-color: var(--c3);
+	min-width: 50rem;
 }
 
 .margin{
 	margin-top: 50px;
+}
+
+
+.connexion-button-connexion {
+	text-decoration: none;
+  	padding: 1rem;
+ 	background-color: var(--c1);
+  	color: var(--c5);
+ 	border: none;
+  	border-radius: 8px;
+ 	cursor: pointer;
+  	font-family: "Doto", sans-serif;
+ 	font-weight: 500;
+	font-size: 1.5rem;
+	max-width: 500px;
+ 	transition: background-color 0.4s ease;
+	border: solid 2px var(--c3);	
+	box-shadow: 0px 0px 20px var(--c5);
+}
+
+.connexion-button-connexion a {
+	text-decoration: none;
+	color: var(--c4);
 }
