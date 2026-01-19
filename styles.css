@@ -580,3 +580,74 @@ div.card_slot{
 .margin{
 	margin-top: 50px;
 }
+
+/* ADMIN PAGE ================================================ */
+.admin_affichage {
+align-items: center;
+display: flex;
+flex-direction: column;
+margin-top: 150px;
+}
+.admin_affichage h1{
+	color: var(--c3);
+	font-family: "VT323", monospace;
+	text-align: center;
+}
+
+.admin{
+	margin-top: 40px;
+	background-color: var(--c2);
+	color: var(--c4);
+	border-radius: 10px;
+	padding: 15px;
+	width: 75%;
+	font-family: "VT323", monospace;
+	font-size: 20px;
+	display: flex;
+    flex-direction:column;
+	box-shadow: 0 0px 50px var(--c3);
+	overflow-y: auto;
+}
+
+.admin_cell {
+	margin: 5px;
+	background-color: var(--c1);
+	border-radius: 8px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-left: 1rem;
+}
+
+.admin_cell div {
+	margin: 1rem
+}
+.editBtn{
+	text-decoration: none;
+  	padding: 0.5rem;
+ 	background-color: var(--c1);
+  	color: var(--c5);
+  	border-radius: 8px;
+ 	cursor: pointer;
+  	font-family: "Doto", sans-serif;
+ 	font-weight: 500;
+	font-size: 1rem;
+	max-width: 500px;
+ 	transition: background-color 0.4s ease;
+	border: solid 2px var(--c3);
+}
+
+.delBtn{
+	text-decoration: none;
+  	padding: 0.5rem;
+ 	background-color: var(--c4);
+  	color: var(--c1);
+  	border-radius: 8px;
+ 	cursor: pointer;
+  	font-family: "Doto", sans-serif;
+ 	font-weight: 500;
+	font-size: 1rem;
+	max-width: 500px;
+ 	transition: background-color 0.4s ease;
+	border: solid 2px var(--c3);	
+}
