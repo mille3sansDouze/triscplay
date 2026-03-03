@@ -1,0 +1,66 @@
+/* CONNEXION PAGE ====================== */
+
+#connexion-title {
+	margin-top: 12rem;
+	color: var(--c3);
+	font-family: "VT323", monospace;
+	text-align: center;
+	
+}
+
+.connexion-div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.5rem 15rem;
+
+
+}
+.connexion-texte{
+	font-family: "VT323", monospace;
+	color: var(--c4)
+}
+.barre-saisie{
+	color: var(--c4)
+}
+.mdp-oublie{
+	font-family: "VT323", monospace;
+	color: var(--c4);
+	text-align: right;
+}
+.input-connexion {
+    flex: 0.95;
+	padding: 0.5rem 0.8rem;
+	border: 1px solid var(--c1);
+	border-radius: 10px;
+	outline: none;
+	font-size: 1rem;
+	font-family: "Doto", sans-serif;
+  	font-weight: 1000;
+	background-color: var(--c3);
+	min-width: 50rem;
+}
+
+.margin{
+	margin-top: 50px;
+}
+
+.connexion-button-connexion {
+	text-decoration: none;
+  	padding: 1rem;
+ 	background-color: var(--c1);
+  	color: var(--c5);
+  	border-radius: 8px;
+ 	cursor: pointer;
+  	font-family: "Doto", sans-serif;
+ 	font-weight: 500;
+	font-size: 1rem;
+	max-width: 500px;
+ 	transition: background-color 0.4s ease;
+	border: solid 2px var(--c3);
+}
+
+.connexion-button-connexion a {
+	text-decoration: none;
+	color: var(--c4);
+}
