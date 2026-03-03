@@ -110,15 +110,22 @@
 	padding: 5rem;
 	border: solid 2px var(--c3);
 	border-radius: 2rem;
-	box-shadow: 0 0px 50px var(--c3);	
+	background-color: var(--c2);
+
+	transition: box-shadow 1.6s ease;
+}
+.index-logo:hover {
+	box-shadow: 0px 0px 50px var(--c4) ;
 }
 
 
 .index-logo img {
-	background-color: var(--c1);
-	border-radius: 3rem;
 	padding: 1rem;
-	border: solid 1px var(--c3);
+	transition: transform 1s ease;
+}
+
+.index-logo img:hover {
+	transform: translateY(-10px);
 }
 .index-logo-text {
 	display: flex;
