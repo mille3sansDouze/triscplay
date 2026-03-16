@@ -110,6 +110,10 @@
 .feature-section {
     min-height: 100vh;
     display: flex;
+	flex-direction: column;
+	gap: 150px;
+	padding-top: 150px;
+	padding-bottom: 150px;
     align-items: center;
     justify-content: center;
 	border-top: solid 1px var(--c3);
@@ -149,10 +153,11 @@
 }
 
 .feature-image img {
-    width: 600px;
+    width: 450px;
     max-width: 100%;
     border-radius: 20px;
 }
+
 
 
 .feature-content {
