@@ -25,21 +25,7 @@
 
 }
 
-#home-hello-del{
-	text-decoration: none;
-  	padding: 0.5rem 1rem; 
-  	color: var(--c4);
- 	border: solid 1px var(--c3);
-  	border-radius: 8px;
-	background-color: var(--c2);
- 	cursor: pointer;
-  	font-family: "Doto", sans-serif;
- 	font-weight: 500;
-	font-size: 1rem;
- 	transition: background-color 0.4s ease;
-	margin-bottom: 1rem;
 
-}
 .home-sidebar {
 	position: fixed;
 	top: 8rem;
@@ -258,17 +244,6 @@
 	font-weight: bold;
 }
 
-.home-footer {
-	background-color: var(--c2);
-	margin-top: auto;
-	padding-top: 5rem;
-	text-align: center;
-	border-radius: 3px;
-	bottom: 0px;
-	width: 100%;
-	margin-bottom: 0px;
-	margin-top: 5rem;
-} 
 
 
 #home-addbtn{
