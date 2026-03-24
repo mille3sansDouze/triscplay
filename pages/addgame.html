@@ -4,16 +4,29 @@
         <meta charset="UTF-8">
         <title>Triscplay</title>
         <link rel="stylesheet" href="../styles.css">
-        <link rel="stylesheet" href="../styles/admin_page.css">
+        <link rel="stylesheet" href="../styles/addgame.css">
         <link rel="icon" href="assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
         <link rel="icon" href="assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
     </head>
     <body>
-        <h1>Add game</h1>
+        <header class="header">
+            <div class="logo"><a href="../index.html"><img src="../assets/logo.png" width="50" alt="logo"></a></div>
+            <h1 class="h1">Triscplay</h1>
+            <a class="button-home" href="home.html">Accueil</a>
+        </header>
+        <main>
+            <div id="agmain">
+                <h1>Add a game</h1>
+                <h2>Welcome administrator whitch what do you want to do ?</h2>
+                <div class="mainbuttons">
+                    <button id="get">See the games (get)</button>
+                    <button id="post">Add a new game (post)</button>
+                    <button id="del">Delete a game (delete)</button>
+                </div>
+            </div>
+            <pre id="reponse"></pre>
+        </main>
 
-        <button id="get">GET get get get</button>
-        <button id="post">POST</button>
-        <button id="del">DELETE</button>
     </body>
 </html>
 <script src="../scripts/addgame.js"></script>

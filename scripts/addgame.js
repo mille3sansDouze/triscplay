@@ -3,12 +3,32 @@ const postbtn = document.getElementById("post")
 const delbtn = document.getElementById("del")
 /*const addbtn = document.getElementById("get")*/
 
+
+function renderData(data) {
+  const container = document.getElementById("reponse");
+    container.innerHTML = data.map(game => `
+      <div class="card">
+        <h2>${game.name}</h2>
+        <p>${game.description}</p>
+        <p class="meta">PEGI : ${game.pegi} | Joueurs : ${game.playerCount} | Multi : ${game.isMultiplayer ? "Oui" : "Non"}</p>
+        <small>ID : ${game.id}</small>
+      </div>
+    `).join("");
+
+}
+
+
+
+/*=============================*/
+
 async function loadGames() {
   const res = await fetch("http://localhost:3000/game/");
   const data = await res.json();
   console.log(data);
+  renderData(data);
 }
 
+/*=============================*/
 
 async function postGame() {
   let name = prompt("nom");
@@ -30,17 +50,30 @@ async function postGame() {
 
   const data = await res.json();
   console.log(data);
+  await loadGames()
 }
 
-
+/*=============================*/
 
 async function delGame(id) {
     const res = await fetch(`http://localhost:3000/game/${id}`, {
         method: "DELETE"
     });
-    const data = await res.json();
-    console.log(data);
+      try {
+        const data = await res.json();
+        console.log(data);
+      } catch(e) {}
+
+    await loadGames()
 }
+
+
+
+
+/*=============================*/
+
+
+
 
 addbtn.addEventListener("click", () => {
     loadGames();
