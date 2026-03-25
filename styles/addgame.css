@@ -4,9 +4,7 @@
     align-items: center;
    
 }
-#agmain button {
 
-}
 #agmain h1 {
     margin-top: 150px;
     font-family: "Doto", sans-serif;
@@ -25,110 +23,143 @@
 
 
 }
-.mainbuttons {
-    padding: 50px;
-    border-radius: 520px;
-    display: flex;
-    gap: 50px;
-    border: solid 1px var(--c3);
-    background: linear-gradient(
-        135deg,
-		var(--c2),
-		var(--c3)
-    );
-	
-}
-.mainbuttons button {
-    background-color: var(--c1);
-    border: 1px var(--c3) solid;
-    border-radius: 50px;
-    padding: 1rem;
-    text-decoration: none;
-  	font-family: "VT323", sans-serif;
+#agmain h3 {
+    font-family: "VT323", sans-serif;
  	font-weight: 500;
 	font-size: 1.5rem;
-    color: white;
+    color: var(--c1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-	
+
+.mainbuttons {
+  padding: 50px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border: solid 1px var(--c3);
+  background: linear-gradient(200deg, var(--c2), var(--c3), var(--c2));
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  transition: background-position 1.5s;
+  margin-bottom: 20px;
+  width: 85%;
+}
+
+.mainbuttons:hover {
+  background-position: 100% 50%;
+}
+
+.mainbuttons-top {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+.mainbuttons button {
+  background-color: var(--c1);
+  border: 1px var(--c3) solid;
+  border-radius: 50px;
+  padding: 1rem;
+  font-family: "VT323", sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
 }
 
 #get {
-    transition: transform 0.7s ease;
-
+  transition: transform 0.7s ease;
 }
 #get:hover {
-    background-color: var(--c2);
-    transform: scale(110%);
+  background-color: var(--c2);
+  transform: scale(110%);
 }
-#post {
-    transition: transform 0.7s ease;
-}
-#post:hover {
-    transform: scale(110%);
-    background-color: var(--c2);
-}
+
 #del {
-    transition: transform 0.7s ease;
+  transition: transform 0.7s ease;
 }
 #del:hover {
-    background-color: var(--c2);
-    transform: scale(110%);
+  background-color: var(--c2);
+  transform: scale(110%);
+}
+#submit {
+  transition: transform 0.7s ease;
+}
+#submit:hover {
+  background-color: var(--c2);
+  transform: scale(110%);
+}
+
+#addgameform  {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+#addgameform  input,
+#addgameform  select {
+  font-family: "VT323", monospace;
+  background: var(--c2);
+  color: var(--c1);
+  border: solid 1 px var(--c1);
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px var(--c1);
+  outline: none;
 }
 
 
 #reponse {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 700px;
-  margin: 40px auto 0;
-  white-space: normal;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--c2);
   font-family: inherit;
+  white-space: normal;
+  border-radius: 50px;
+  margin-left: 110px;
+  margin-right: 110px;
 }
 
 .card {
-  background: rgba(50, 0, 79, 0.75);
-  border: 1px solid var(--c3);
-  border-radius: 12px;
-  padding: 20px 24px;
-  position: relative;
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  background-color: var(--c3);
+  box-shadow: 0 0 15px var(--c3);
+  border-radius: 50px;
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 1s ease;
 }
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--c3), var(--c4));
-}
-
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 24px rgba(229, 0, 133, 0.25);
+    transform: scale(200%);
+}
+
+.card-inner {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card h2 {
-  font-family: "Doto", sans-serif;
-  font-weight: 500;
-  font-size: 1.4rem;
-  color: var(--c5);
-  margin-bottom: 8px;
+  font-family: "VT323", sans-serif;
+  color: white;
 }
-
 .card p {
-  font-family: "VT323", monospace;
-  font-size: 1.1rem;
-  color: var(--c5);
-  opacity: 0.75;
-  margin-bottom: 4px;
-  line-height: 1.4;
-}
-
-.card small {
-  font-family: "VT323", monospace;
-  font-size: 0.9rem;
-  color: var(--c3);
-  opacity: 0.7;
+    font-family: "VT323", sans-serif;
+    color: white;
 }

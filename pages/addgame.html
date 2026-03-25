@@ -5,8 +5,8 @@
         <title>Triscplay</title>
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../styles/addgame.css">
-        <link rel="icon" href="assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
-        <link rel="icon" href="assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
+        <link rel="icon" href="../assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
+        <link rel="icon" href="../assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
     </head>
     <body>
         <header class="header">
@@ -17,14 +17,39 @@
         <main>
             <div id="agmain">
                 <h1>Add a game</h1>
-                <h2>Welcome administrator whitch what do you want to do ?</h2>
+                <h2>Welcome administrator, what do you want to do ?</h2>
                 <div class="mainbuttons">
+                <div class="mainbuttons-top">
                     <button id="get">See the games (get)</button>
-                    <button id="post">Add a new game (post)</button>
                     <button id="del">Delete a game (delete)</button>
                 </div>
+                    <form id="addgameform">
+                        <h3>Add game :</h3>
+                            <div>
+                                <input id="gameName" type="text" placeholder="Nom du jeu" />
+                                <input id="gameDescription" type="text" placeholder="Courte description" />
+                                <input id="gamePlayerCount" type="text" placeholder="Nombre de joueurs" />
+                            </div><br>
+                        <div>
+                            <select id="gamePegi">
+                                <option value="">Pegi...</option>
+                                <option value="3">3</option>
+                                <option value="7">7</option>
+                                <option value="12">12</option>
+                                <option value="16">16</option>
+                                <option value="18">18</option>
+                            </select>
+                            <select id="gameMultiplayer">
+                                <option value="">Multijoueur ?</option>
+                                <option value="true">Oui</option>
+                                <option value="false">Non</option>
+                            </select>
+                        </div>
+                        <button id="submit" type="button" onclick="postGame()">Submit</button>  
+                    </form>
+                </div>
             </div>
-            <pre id="reponse"></pre>
+                <pre id="reponse"></pre>
         </main>
 
     </body>

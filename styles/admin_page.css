@@ -25,6 +25,30 @@ margin-top: 150px;
 	overflow-y: auto;
 }
 
+
+.adminjeu{
+	margin-top: 40px;
+	color: var(--c4);
+	border-radius: 10px;
+	padding: 15px;
+	width: 75%;
+	font-family: "VT323", monospace;
+	font-size: 20px;
+	display: flex;
+    flex-direction:column;
+	overflow-y: auto;
+	align-items: center;
+	background: linear-gradient(200deg, var(--c2), var(--c3), var(--c2));
+	background-size: 200% 200%;
+	background-position: 0% 50%;
+	transition: background-position 1s, transform 1s;
+}
+.adminjeu:hover {
+  background-position: 100% 50%;
+  transform: scale(1.1);
+}
+
+
 .admin_cell {
 	margin: 5px;
 	background-color: var(--c1);
