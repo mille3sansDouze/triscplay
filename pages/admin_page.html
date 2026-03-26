@@ -8,19 +8,24 @@
         <link rel="icon" href="../assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
         <link rel="icon" href="../assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
     </head>
+    <script src="../scripts/animation.js"></script>
     <body>
+        
         <header class="header">
             <div class="logo"><a href="../index.html"><img src="../assets/logo.png" width="50" alt="logo"></a></div>
             <h1 class="h1">Triscplay</h1>
             <a class="button-home" href="home.html">Accueil</a>
         </header>
-
+        <div id="transition">
+            <img id="loader" src="../assets/animation/tour1.png">
+            <p id="loadingText">Chargement...</p>
+        </div>
         <div class = "admin_affichage">
             <h1>Page d'administration</h1>
            
             <div class = "adminjeu">
                 <h2>Jeux</h2>
-                <a class="editBtn" href="addgame.html">Voir, éditer ou ajouter des jeux</a>
+                <a class="editBtn" href="addgame.html" onclick="event.preventDefault(); goToPage('addgame.html');">Voir, éditer ou ajouter des jeux</a>
             </div>
 
             <div class = "admin">
