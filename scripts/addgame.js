@@ -108,11 +108,7 @@ async function delGame(id) {
 }
 
 
-
-
 /*=============================*/
-
-
 
 
 addbtn.addEventListener("click", () => {

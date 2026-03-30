@@ -19,6 +19,10 @@
             </div>
 
         </header>
+        <div id="transition">
+            <img id="loader" src="../assets/animation/tour1.png">
+            <p id="loadingText">Chargement...</p>
+        </div>
 
         <main>
             <div id="index-center-presentation">
@@ -35,8 +39,8 @@
             <div class="index-connexion">
                 <h3>rejoint nous maintenant</h3>
                 <div class="index-connexion-button-div">
-                    <a class="index-signin-button" href="pages/page_inscription.html"> S'inscrire</a>
-                    <a class="index-connexion-button" href="pages/page_connexion.html"> Connecte toi</a>
+                    <a class="index-signin-button" onclick="event.preventDefault(); goToPage('pages/page_inscription.html');"> S'inscrire</a>
+                    <a class="index-connexion-button" onclick="event.preventDefault(); goToPage('pages/page_connexion.html');"> Connecte toi</a>
                 </div>
             </div>
 
@@ -190,5 +194,5 @@
     </body>
     
 
-
+<script src="./scripts/animation.js"></script>
 </html>
