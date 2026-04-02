@@ -1,0 +1,282 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+ 
+    body {
+      background: var(--c1);
+      color: #fff;
+      font-family: "VT323", monospace;
+      display: flex;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+/* ── SIDEBAR ── */
+.sidebar {
+    width: var(--sidebar-width);
+    min-height: 100vh;
+    background: var(--c2);
+    border-right: 1px solid rgba(233,69,96,0.18);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 12px;
+    gap: 6px;
+    position: relative;
+    flex-shrink: 0;
+    transition: width 0.3s cubic-bezier(.77,0,.18,1);
+    overflow: hidden;
+}
+
+/* scanline overlay */
+.sidebar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0,0,0,0.08) 3px,
+    rgba(0,0,0,0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Logo */
+.logo {
+    font-family: "Doto", sans-serif;
+    font-size: 26px;
+    letter-spacing: 4px;
+    color: var(--c5);
+    padding: 8px 12px 20px;
+    text-shadow: 0 0 16px var(--c5);
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.logo span {
+    color: #fff;
+    text-shadow: none;
+}
+
+/* Divider */
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, var(--c5) 0%, transparent 100%);
+    margin: 8px 12px;
+    opacity: 0.35;
+    position: relative;
+    z-index: 1;
+}
+
+/* Nav items */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "VT323", monospace;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.55);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.nav-item:hover {
+    background: rgba(233,69,96,0.08);
+    color: #fff;
+    border-color: rgba(233,69,96,0.2);
+}
+
+.nav-item.active {
+    background: rgba(233,69,96,0.14);
+    color: var(--c5);
+    border-color: rgba(233,69,96,0.35);
+    box-shadow: 0 0 12px rgba(233,69,96,0.12) inset;
+    text-shadow: 0 0 8px var(--c5);
+}
+
+.nav-item .icon {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-item .icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.nav-item .label {
+    overflow: hidden;
+    transition: opacity 0.2s, max-width 0.3s;
+}
+
+/* notification badge */
+.badge {
+    margin-left: auto;
+    background: var(--c5);
+    color: #fff;
+    font-size: 13px;
+    font-family: "Doto", sans-serif;
+    padding: 1px 7px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px var(--c5);
+    flex-shrink: 0;
+}
+
+/* spacer pushes account btn to bottom */
+.spacer { flex: 1; }
+
+/* Account button */
+.account-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgba(233,69,96,0.3);
+    background: rgba(15,52,96,0.4);
+    color: #fff;
+    font-family: "VT323", monospace;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    position: relative;
+    z-index: 1;
+    transition: background 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.account-btn:hover {
+    background: rgba(233,69,96,0.15);
+    box-shadow: 0 0 16px rgba(233,69,96,0.2);
+}
+
+.avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--c4), var(--c5));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Doto", sans-serif;
+    font-size: 15px;
+    color: #fff;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(233,69,96,0.4);
+    border: 1.5px solid var(--c5);
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.account-name {
+    color: #fff;
+    font-size: 18px;
+}
+
+.account-role {
+    color: var(--c5);
+    font-size: 14px;
+    font-family: "Doto", sans-serif;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+    flex: 1;
+    padding: 40px 48px;
+    overflow-y: auto;
+    background: radial-gradient(ellipse at 70% 10%, rgba(15,52,96,0.25) 0%, transparent 60%),
+                var(--c1);
+}
+
+.page-title {
+    font-family: "Doto", sans-serif;
+    font-size: 42px;
+    color: var(--c5);
+    letter-spacing: 6px;
+    text-shadow: 0 0 24px var(--c5);
+    margin-bottom: 8px;
+}
+
+.page-sub {
+    font-family: "VT323", monospace;
+    font-size: 18px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--c2);
+    border: 1px solid rgba(233,69,96,0.15);
+    border-radius: 12px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    cursor: default;
+}
+
+.card:hover {
+    border-color: rgba(233,69,96,0.4);
+    box-shadow: 0 0 20px rgba(233,69,96,0.08);
+}
+
+.card-label {
+    font-family: "Doto", sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--c5);
+    opacity: 0.7;
+}
+
+.card-value {
+    font-family: "Doto", sans-serif;
+    font-size: 36px;
+    color: #fff;
+    text-shadow: 0 0 12px rgba(255,255,255,0.2);
+}
+
+.card-desc {
+    font-family: "VT323", monospace;
+    font-size: 17px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+}
