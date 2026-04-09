@@ -42,8 +42,8 @@ async function inscription() {
         },
         body: JSON.stringify({
             email: email,
-            displayed_name: displayname,
-            user_name: username,
+            id_name: username,
+            user_name: displayname,
             password: password,
         })
         });

@@ -8,6 +8,7 @@
         <link rel="icon" href="../assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
         <link rel="icon" href="../assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
     </head>
+    <script src="../scripts/checksession.js"></script>
 <body>
   <nav class="sidebar">
     <div class="logo">Triscplay<span>.</span>^▽^ </div>
@@ -20,7 +21,7 @@
       <span class="label">ACCUEIL</span>
     </a>
  
-    <a class="nav-item" href="#">
+    <a class="nav-item" href="../index.html">
       <span class="icon">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </span>
@@ -43,11 +44,18 @@
       <span class="badge">12</span>
     </a>
  
-    <a class="nav-item" href="#">
+    <a class="nav-item" href="./player_page.html">
       <span class="icon">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
       </span>
       <span class="label">TON PROFIL</span>
+    </a>
+      
+    <a class="nav-item" href="./admin_page.html">
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      </span>
+      <span class="label">ADMIN PANEL</span>
     </a>
  
     <!-- <a class="nav-item" href="#">
@@ -75,13 +83,9 @@
  
     <div class="spacer"></div>
  
-    <button class="account-btn">
-      <div class="avatar">JD</div>
-      <div class="account-info">
-        <span class="account-name">JEAN D.</span>
-        <span class="account-role">ADMIN</span>
-      </div>
-    </button>
+
+    <pre id="userinfo"></pre>
+  
  
   </nav>
  
@@ -109,8 +113,30 @@
         <div class="card-value">99.9%</div>
         <div class="card-desc">accuracy</div>
       </div>
+       <div class="card">
+        <div class="card-label">JEU</div>
+        <div class="card-value">99.9%</div>
+        <div class="card-desc">accuracy</div>
+      </div>
+       <div class="card">
+        <div class="card-label">JEU</div>
+        <div class="card-value">99.9%</div>
+        <div class="card-desc">accuracy</div>
+      </div>
+       <div class="card">
+        <div class="card-label">JEU</div>
+        <div class="card-value">99.9%</div>
+        <div class="card-desc">accuracy</div>
+      </div>
+       <div class="card">
+        <div class="card-label">JEU</div>
+        <div class="card-value">99.9%</div>
+        <div class="card-desc">accuracy</div>
+      </div>
     </div>
+    <button id="cesiscore">CESI TON SCORE</button>
   </main>
  
 </body>
+<script src="../scripts/main.js"></script>
 </html>

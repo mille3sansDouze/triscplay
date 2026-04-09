@@ -33,6 +33,9 @@ async function checkSession() {
         }
     } catch (err) {
         console.error(err);
+        alert("sa marche pas zebi error : " + err)
+        window.location.href = "./page_connexion.html"
+
     }
 }
 

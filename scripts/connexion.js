@@ -49,7 +49,7 @@ async function connexion() {
 
     } catch (err) {
         console.error(err);
-        alert("sa marche pas zebi")
+        alert("sa marche pas zebi error : " + err)
     }
 }
 
@@ -76,7 +76,7 @@ async function checkSession() {
         });
 
         if (res.ok) {
-            window.location.href = "./home.html"; 
+            window.location.href = "./main.html"; 
         }
     } catch (err) {
         console.error(err);

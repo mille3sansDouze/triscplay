@@ -11,7 +11,7 @@ function renderData(data) {
         <h2>${game.name}</h2>
         <p>${game.description}</p>
         <p class="meta">PEGI : ${game.pegi} | Joueurs : ${game.playerCount} | Multi : ${game.isMultiplayer ? "Oui" : "Non"}</p>
-        <small>ID : ${game.id}</small>
+        <small>ID : ${game.id_game}</small>
       </div>
     </div>
     `).join("");

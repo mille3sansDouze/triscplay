@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     padding: 24px 12px;
-    gap: 6px;
+    gap: 12px;
     position: relative;
     flex-shrink: 0;
     transition: width 0.3s cubic-bezier(.77,0,.18,1);
@@ -68,9 +68,9 @@
 /* Divider */
 .divider {
     height: 1px;
-    background: linear-gradient(90deg, var(--c5) 0%, transparent 100%);
+    background: linear-gradient(180deg, var(--c5) 100%, transparent 100%);
     margin: 8px 12px;
-    opacity: 0.35;
+    opacity: 0.45;
     position: relative;
     z-index: 1;
 }
@@ -81,7 +81,7 @@
     align-items: center;
     gap: 14px;
     padding: 13px 14px;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-family: "VT323", monospace;
     font-size: 20px;
@@ -149,12 +149,20 @@
 /* spacer pushes account btn to bottom */
 .spacer { flex: 1; }
 
+
+
 /* Account button */
-.account-btn {
+.sidebar pre {
+    all: unset;
+    display: contents;  /* Le <pre> disparaît du flux, le button reste direct enfant flex */
+}
+
+
+#account-btn {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 12px 14px;
+    padding: 18px 14px;
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid rgba(233,69,96,0.3);
@@ -170,7 +178,7 @@
     overflow: hidden;
 }
 
-.account-btn:hover {
+#account-btn:hover {
     background: rgba(233,69,96,0.15);
     box-shadow: 0 0 16px rgba(233,69,96,0.2);
 }
@@ -279,4 +287,13 @@
     font-size: 17px;
     color: rgba(255,255,255,0.4);
     letter-spacing: 1px;
+}
+
+
+
+
+#cesiscore {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
 }
