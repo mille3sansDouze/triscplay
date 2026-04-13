@@ -86,7 +86,7 @@ async function checkSession() {
         });
 
         if (res.ok) {
-            window.location.href = "./home.html"; 
+            window.location.href = "./main.html"; 
         }
     } catch (err) {
         console.error(err);

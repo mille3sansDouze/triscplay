@@ -23,8 +23,8 @@ function loadUserInfo() {
     <button id="account-btn">
         <div class="avatar">JD</div>
         <div class="account-info">
-        <span class="account-name">${user.displayed_name}</span>
-        <span class="account-role">${user.user_name}</span>
+        <span class="account-name">${user.user_name}</span>
+        <span class="account-role">${user.id_name}</span>
       </div>
     </button>`
 

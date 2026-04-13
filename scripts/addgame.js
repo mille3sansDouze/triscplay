@@ -10,7 +10,7 @@ function renderData(data) {
       <div class="card-inner">
         <h2>${game.name}</h2>
         <p>${game.description}</p>
-        <p class="meta">PEGI : ${game.pegi} | Joueurs : ${game.playerCount} | Multi : ${game.isMultiplayer ? "Oui" : "Non"}</p>
+        <p class="meta">PEGI : ${game.pegi} | Joueurs : ${game.player_count} | Multi : ${game.is_multiplayer ? "Oui" : "Non"}</p>
         <small>ID : ${game.id_game}</small>
       </div>
     </div>
@@ -48,16 +48,23 @@ async function postGame() {
     alert("Le nombre de joueurs est invalide.")
     return
   }
+
+  
   let pegi = document.getElementById("gamePegi").value
   if (isNaN(pegi) || pegi < 0) {
     alert("Le PEGI est invalide.")
     return
   }
+
   let isMultiplayer = document.getElementById("gameMultiplayer").value
   if (isMultiplayer !== "true" && isMultiplayer !== "false") {
     alert("Veuillez sélectionner une option pour le multijoueur.")
     return
   }
+
+  playercount = Number(playercount)
+  pegi = Number(pegi)
+
 
   document.getElementById("gameName").value = "";
   document.getElementById("gameDescription").value = "";
@@ -76,8 +83,8 @@ async function postGame() {
         name: name,
         description: description,
         pegi: pegi,
-        playerCount: playercount,
-        isMultiplayer: false
+        player_count: playercount,  
+        is_multiplayer: false
       })
     });
 
