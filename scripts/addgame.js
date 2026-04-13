@@ -2,6 +2,12 @@ const addbtn = document.getElementById("get")
 const delbtn = document.getElementById("del")
 /*const addbtn = document.getElementById("get")*/
 
+function getAuthHeaders() {
+  return {
+    "Content-Type": "application/json",
+    "x-session-id": localStorage.getItem("session_id")
+  };
+}
 
 function renderData(data) {
   const container = document.getElementById("reponse");
@@ -76,10 +82,7 @@ async function postGame() {
   try {
     const res = await fetch("http://localhost:3000/game", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-session-id": localStorage.getItem("session_id")
-      },
+      headers: getAuthHeaders(),
       body: JSON.stringify({
         name: name,
         description: description,
