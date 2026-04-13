@@ -77,7 +77,8 @@ async function postGame() {
     const res = await fetch("http://localhost:3000/game", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "x-session-id": localStorage.getItem("session_id")
       },
       body: JSON.stringify({
         name: name,
