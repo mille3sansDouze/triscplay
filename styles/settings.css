@@ -112,7 +112,7 @@ body {
     font-size: 34px;
     color: #fff;
     flex-shrink: 0;
-    border: 2px solid var(--c5);
+    border: 2px solid var(--c3);
     box-shadow: 0 0 20px rgba(233,69,96,0.35);
     position: relative;
     overflow: hidden;
@@ -122,19 +122,24 @@ body {
     position: absolute; inset: 0;
     width: 100%; height: 100%;
     object-fit: cover;
-    display: none;
     border-radius: 50%;
 }
-.avatar-overlay {
-    position: absolute; inset: 0;
-    background: rgba(233,69,96,0.55);
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0;
-    transition: opacity 0.2s;
-    border-radius: 50%;
+
+#pdp-input{
+    width: 100%;
+    background: rgba(15,52,96,0.25);
+    border: 1px solid rgba(233,69,96,0.2);
+    border-radius: 9px;
+    padding: 13px 16px 13px 12px;
+    color: #fff;
+    font-family: "VT323", monospace;
+    font-size: 19px;
+    letter-spacing: 1px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    caret-color: var(--c5);
 }
-.avatar-overlay svg { width: 28px; height: 28px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.avatar-lg:hover .avatar-overlay { opacity: 1; }
+
 
 .avatar-actions { display: flex; flex-direction: column; gap: 10px; }
 .avatar-actions p {
@@ -346,6 +351,7 @@ body {
     text-shadow: 0 0 10px #4ecca3;
 }
 .toast.show { opacity: 1; }
+
 
 
 .danger-card {

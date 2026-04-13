@@ -25,10 +25,10 @@ async function checkSession() {
         });
 
         if (res.ok) {
-            console.log("a")
+            console.log("auth ok! welcome")
             //do nothing de preference
         }else {
-            console.log("b")
+            console.log("no no no :(")
             window.location.href = "./page_connexion.html"
         }
     } catch (err) {

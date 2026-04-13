@@ -1,6 +1,6 @@
 loadUserInfo()
 
-function loadUserInfo() {
+async function loadUserInfo() {
     const user_cookie = localStorage.getItem("user");
 
     if (!user_cookie) {
@@ -18,17 +18,19 @@ function loadUserInfo() {
 
     const user = JSON.parse(user_cookie);
 
+    const res = await fetch(`http://localhost:3000/user/${user.id_user}`);
+    const data = await res.json();
+    console.log(data);
+
+
     const container = document.getElementById("userinfo");
     container.innerHTML = `
     <button id="account-btn">
-        <div class="avatar">JD</div>
+        <div class="avatar"><img id="avatar-img" src="${data.profile_pic_url}" alt="avatar"/></div>
         <div class="account-info">
-        <span class="account-name">${user.user_name}</span>
-        <span class="account-role">${user.id_name}</span>
+        <span class="account-name">${data.user_name}</span>
+        <span class="account-role">${data.id_name}</span>
       </div>
     </button>`
 
 }
-
-
-

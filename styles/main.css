@@ -196,7 +196,12 @@
     color: #fff;
     flex-shrink: 0;
     box-shadow: 0 0 10px rgba(233,69,96,0.4);
-    border: 1.5px solid var(--c5);
+    border: 1.5px solid var(--c3);
+}
+.avatar img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .account-info {

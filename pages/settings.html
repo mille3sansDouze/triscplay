@@ -83,20 +83,13 @@
             <div class="card-title">PHOTO DE PROFIL</div>
             </div>
             <div class="avatar-section">
-            <div class="avatar-lg" id="avatar-preview" onclick="document.getElementById('file-input').click()">
-                JD
+            <div class="avatar-lg" id="avatar-preview">
                 <img id="avatar-img" src="" alt="avatar"/>
-                <div class="avatar-overlay">
-                <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                </div>
             </div>
             <div class="avatar-actions">
-                <p>FORMAT JPG, PNG OU GIF · MAX 5 MB<br>RÉSOLUTION RECOMMANDÉE 400×400 PX</p>
-                <button class="btn-upload" onclick="document.getElementById('file-input').click()">
-                <svg viewBox="0 0 24 24"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0018 9h-1.26A8 8 0 103 16.3"/></svg>
-                CHOISIR UN FICHIER
-                </button>
-                <input type="file" id="file-input" accept="image/*" onchange="handleAvatar(event)"/>
+                <p>LIENS D'UNE IMAGE PROVENANT DE L'EXTERIEUR UNIQUEMENT :(</p>
+                <input type="text" id="pdp-input" placeholder="URL DE L'IMAGE" value="GG sa bug ici aussi" maxlength="500"> 
+                <div class="hint">MAX 500 CARACTÈRES</div>
             </div>
             </div>
         </div>
@@ -185,9 +178,9 @@
         <!-- ── SAUVEGARDER ── -->
         <div class="card full" style="background:transparent;border-color:transparent;padding-top:4px;padding-bottom:0;">
             <div class="save-row">
-            <button class="btn-save" onclick="save()">SAUVEGARDER</button>
+            <button class="btn-save" id="save_btn">SAUVEGARDER</button>
             <button class="btn-cancel">ANNULER</button>
-            <div class="toast" id="toast">✓ MODIFICATIONS ENREGISTRÉES</div>
+            <div class="toast" id="toast"></div>
             </div>
         </div>
     
