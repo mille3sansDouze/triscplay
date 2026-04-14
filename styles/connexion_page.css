@@ -28,6 +28,7 @@
 	color: var(--c4);
 	text-align: right;
 }
+
 .input-connexion {
     flex: 0.95;
 	padding: 0.5rem 0.8rem;
@@ -39,6 +40,20 @@
   	font-weight: 1000;
 	background-color: var(--c3);
 	min-width: 50rem;
+	display: flex;
+    align-items: center; 
+	height: 30px;
+}
+
+.input-connexion .mdp{
+	flex: 1;
+	width:97%;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	font-size: 1rem;
+	font-family: "Doto", sans-serif;
+  	font-weight: 1000;
 }
 
 .margin{
