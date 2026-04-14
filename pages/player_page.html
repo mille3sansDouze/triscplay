@@ -1,88 +1,131 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang ="fr">
     <head>
         <meta charset="UTF-8">
-        <title>Triscplay - Joueur</title>
+        <title>Triscplay</title>
         <link rel="stylesheet" href="../styles.css">
-        <link rel="stylesheet" href="../styles/game_and_player_page.css">
-        <link rel="icon" href="assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
-        <link rel="icon" href="assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
+        <link rel="stylesheet" href="../styles/main.css">
+        <link rel="stylesheet" href="../styles/player.css">
+
+        <link rel="icon" href="../assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
+        <link rel="icon" href="../assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
     </head>
     <script src="../scripts/checksession.js"></script>
-    <body class = "body">
+<body>
+  <nav class="sidebar">
+    <div class="logo">Triscplay<span>.</span>^▽^ </div>
+    <div class="divider"></div>
+ 
+    <a class="nav-item" href="./main.html">
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+      </span>
+      <span class="label">ACCUEIL</span>
+    </a>
+ 
+    <a class="nav-item" href="../index.html">
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </span>
+      <span class="label">RECHERCHER</span>
+    </a>
+ 
+    <!-- <a class="nav-item" href="#">
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+      </span>
+      <span class="label">ALERTES</span>
+      <span class="badge">3</span>
+    </a>
+  -->
+    <a class="nav-item" href="#">
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </span>
+      <span class="label">MESSAGES</span>
+      <span class="badge">12</span>
+    </a>
+ 
+    <a class="nav-item active" href="./player_page.html">
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      </span>
+      <span class="label">TON PROFIL</span>
+    </a>
+      
+    <a class="nav-item" href="./admin_page.html">
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      </span>
+      <span class="label">ADMIN PANEL</span>
+    </a>
+ 
+    <!-- <a class="nav-item" href="#">
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </span>
+      <span class="label">FAVORIS</span>
+    </a> -->
+ 
+    <!-- <a class="nav-item" href="#">
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+      </span>
+      <span class="label">EN DIRECT</span>
+    </a> -->
+ 
+    <div class="divider"></div>
+ 
+    <a class="nav-item" href="./settings.html">
+      <span class="icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      </span>
+      <span class="label">PARAMÈTRES</span>
+    </a>
 
-        <header class="header">
-            <div class="logo"><img src="../assets/logo.png" width="50" alt="logo"></div>
-            <h1 class="h1">Triscplay</h1>
-            <a class="button-home" href="main.html">Accueil</a>
-        </header>
+ 
+    <div class="spacer"></div>
+ 
 
-        <div class = "page_category">
-            <h1>Page de joueur</h1>
+    <pre id="userinfo"></pre>
+  
+ 
+  </nav>
+ 
+  <main class="main">
+    <div class="page-title">TON PROFIL</div>
+    <div class="page-sub">// WOW TIÉ UN TIGRE (๑˃ᴗ˂)ﻭ  </div>
+    <div class="profileCards">
+    <div class="profileRender">
+
+        <div class="profilePicture">
+        <img class="profileAvatar"
+            src="https://media.discordapp.net/attachments/1474811302785450164/1493551225977831474/image.png?ex=69df6179&is=69de0ff9&hm=d27136c124b3bdde6c12b1ca1733b51ca540a65782302d5fbb1fa795cd6448cc&=&format=webp&quality=lossless&width=2489&height=1399"
+            alt="avatar">
         </div>
 
-        <div class="home-layout">
-            <aside class="home-sidebar">
-                <h2 class="home-sidebar-title">SOCIAL</h2>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                <a class="home-sidebar-items" href="player_page.html">test</a>
-                
-            </aside>
+        <div class="profileInformation">
+        <div class="profileHeader">
+            <p class="profilePseudo">Mill3</p>
+            <!-- <span class="profileTag">#1029</span> -->
         </div>
 
-        <div class = "game_card">
-            <img src="../assets/blank_profile.png" alt ="Photo de profil" height ="100" width ="100">
+        <p class="profileName">@Mille3sansDouze</p>
+        <p class="profileBio">Mon seul point faible c'est que je suis trop fort et si tu me crois pas bah baise tes morts</p>
 
-            <h3>Pseudo</h3>
-            <div class = "card_slot">
-                <p>JeanJeandu29</p>
-            </div>
-
-            <h3>Meilleurs scores</h3>
-            <div class = "card_slot">
-                <ul>
-                    <li>Jeu 1 : 9584</li>
-                    <li>Jeu 2 : 8756</li>
-                    <li>Jeu 3 : 5742</li>
-                </ul>
-            </div>
-
-            <h3>Jeux joués</h3>
-            <div class = "card_slot">
-                <ul>
-                    <li>Minecraft</li>
-                    <li>Rocket League</li>
-                    <li>Overwatch 2</li>
-                    <li>CS2</li>
-                    <li>Diablo IV</li>
-                </ul>
-            </div>
+        <div class="profileStats">
+            <div><span>LVL</span> 42</div>
+            <div><span>SCORE</span> 9870</div>
+            <div><span>RANK</span> S+</div>
+        </div>
         </div>
 
-
-        
+    </div>
+    </div>
     
-    </body>
+    <button id="cesiscore">CESI TON SCORE</button>
+  </main>
+ 
+</body>
+<script src="../scripts/main.js"></script>
 </html>
-

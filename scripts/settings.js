@@ -69,9 +69,9 @@ async function save() {
     const toast = document.getElementById('toast');
     const displayName = document.getElementById('display-name');
     const description = document.getElementById('bio')
-    const currentPwd = document.getElementById('')
-    const newPwd = document.getElementById('')
-    const newPwdConfirm = document.getElementById('')
+    const currentPwd = document.getElementById('pwd-current')
+    const newPwd = document.getElementById('pwd-new')
+    const newPwdConfirm = document.getElementById('pwd-confirm')
     const pdp = document.getElementById('pdp-input')
     
     const user_cookie = localStorage.getItem("user");
@@ -79,25 +79,114 @@ async function save() {
 
     const user = JSON.parse(user_cookie);
 
+    const isChangingPassword = newPwd.value || newPwdConfirm.value || currentPwd.value;
+ 
+    if (isChangingPassword) {
+        if (!currentPwd.value.trim()) {
+            toast.textContent = "❌ ERREUR | Ancien mot de passe requis";
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2800);
+            return;
+        }
+        if (!newPwd.value || !newPwdConfirm.value) {
+            toast.textContent = "❌ ERREUR | Nouveau mot de passe et confirmation requis";
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2800);
+            return;
+        }
+        if (newPwd.value !== newPwdConfirm.value) {
+            toast.textContent = "❌ ERREUR | Les mots de passe ne correspondent pas";
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2800);
+            return;
+        }
+        try {
+            const loginRes = await fetch("http://localhost:3000/user/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: user.email,
+                    password: currentPwd.value,
+                })
+            });
+        
+            if (!loginRes.ok) {
+                toast.textContent = "❌ ERREUR | Ancien mot de passe incorrect";
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2800);
+                return;
+            }
+            try {
+                const res = await fetch(`http://localhost:3000/user/logout/`, {
+                    method: 'POST',
+                    headers: getAuthHeaders()
+                });
+                const data = await res.json();
+                console.log(data.message);
+                
+            } catch (err) {
+                console.error('Erreur lors de la déconnexion:', err);
+            }
+
+            const data = await loginRes.json();
+            
+            console.log(loginRes)
+
+            if (isChangingPassword && data.session_id) {
+                localStorage.setItem("session_id", data.session_id);
+                localStorage.setItem("expire_at", data.expire_at);
+                localStorage.setItem("user", JSON.stringify(data.user));
+            }
+        
+    
+        } catch (err) {
+            console.error("Erreur lors de la vérification du mot de passe:", err);
+            toast.textContent = "❌ ERREUR | Problème de connexion";
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2800);
+            return;
+        }
+    }
 
     const body = {
         user_name: displayName.value,
         description: description.value,
         profile_pic_url: pdp.value
+    };
+
+    if (isChangingPassword) {
+        body.password = newPwd.value;
     }
-    console.log("check")
-    await fetch(`http://localhost:3000/user/${user.id_user}`, {
+
+    try {
+        const res = await fetch(`http://localhost:3000/user/${user.id_user}`, {
             method: "PATCH",
             headers: getAuthHeaders(),
             body: JSON.stringify(body)
         });
+ 
+        if (!res.ok) {
+            const errorData = await res.json();
+            toast.textContent = `❌ ERREUR | ${errorData.message || 'Erreur lors de la mise à jour'}`;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2800);
+            return;
+        }
+ 
 
-    
 
-    toast.textContent = "✓ MODIFICATIONS ENREGISTRÉES | reload de la page automatique veuillez patienter "
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 2800);
-    setTimeout(() => window.location.reload(), 3100);
+        toast.textContent = "✓ MODIFICATIONS ENREGISTRÉES | reload de la page automatique veuillez patienter "
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2800);
+        setTimeout(() => window.location.reload(), 3100);
+    } catch (err) {
+        console.error("Erreur lors de la mise à jour:", err);
+        toast.textContent = "❌ ERREUR | Problème réseau";
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2800);
+    }
 }
 
 
@@ -131,3 +220,20 @@ async function loadProfile() {
 }
 loadProfile()
 
+
+
+
+async function logout() {
+    try {
+        const res = await fetch(`http://localhost:3000/user/logout/`, {
+            method: 'POST',
+            headers: getAuthHeaders()
+        });
+        const data = await res.json();
+        console.log(data.message);
+        window.location.href = "./page_connexion.html"; 
+    } catch (err) {
+        console.error('Erreur lors de la déconnexion:', err);
+    }
+    
+}
