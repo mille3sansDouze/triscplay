@@ -84,4 +84,18 @@ async function checkSession() {
 }
 
 checkSession();
-
+async function PasswordVisibilityConnexion(){
+    const img=document.getElementById("image-eye");
+    const input=document.getElementById("password");
+    img.addEventListener("click", () => {
+        if(input.type==="password"){
+            img.src = "../assets/visibility_off_mdp.png";
+            input.type= "text"
+        }
+        else{
+            img.src = "../assets/visibility_mdp.png";
+            input.type= "password"
+        }
+    });
+}
+PasswordVisibilityConnexion();
