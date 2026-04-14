@@ -1,4 +1,3 @@
-
 async function connexion() {
 
 
@@ -84,9 +83,12 @@ async function checkSession() {
 }
 
 checkSession();
-async function PasswordVisibilityConnexion(){
+function PasswordVisibilityConnexion(){
     const img=document.getElementById("image-eye");
     const input=document.getElementById("password");
+
+    if (!img || !input) return;
+
     img.addEventListener("click", () => {
         if(input.type==="password"){
             img.src = "../assets/visibility_off_mdp.png";
@@ -98,4 +100,4 @@ async function PasswordVisibilityConnexion(){
         }
     });
 }
-PasswordVisibilityConnexion();
+document.addEventListener("DOMContentLoaded", PasswordVisibilityConnexion);

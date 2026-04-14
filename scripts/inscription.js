@@ -95,7 +95,7 @@ async function checkSession() {
 
 checkSession();
 
-async function PasswordVisibilityInscription(){
+function PasswordVisibilityInscription(){
     const img=document.getElementById("image-eye");
     const input=document.getElementById("password");
     img.addEventListener("click", () => {
@@ -109,4 +109,4 @@ async function PasswordVisibilityInscription(){
         }
     });
 }
-PasswordVisibilityInscription();
+document.addEventListener("DOMContentLoaded", PasswordVisibilityInscription);
