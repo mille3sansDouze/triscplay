@@ -73,7 +73,7 @@ async function toggleScorePopup() {
     //Place les jeux de l'API dans la liste déroulante
     games.forEach((game) => {
       const option = document.createElement("option");
-      option.value = game.id;
+      option.value = game.id_game;
       option.textContent = game.name;
       select.appendChild(option);
     });
@@ -95,7 +95,7 @@ async function toggleScorePopup() {
   const selectedGameId = select.value;   // option.value doit contenir l'id du jeu (number)
   const score = input.value.trim();
 
-  if (!selectedGameId || !score) {
+  if (!selectedGameId || isNaN(parseInt(selectedGameId)) || !score) {
     alert("Merci de sélectionner un jeu et d'entrer un score !");
     return;
   }
@@ -105,8 +105,7 @@ async function toggleScorePopup() {
       method: "POST",
       headers: getAuthHeaders(),
       body: JSON.stringify({
-        id_user: localStorage.getItem("id_user"), // à adapter selon comment tu stockes l'utilisateur courant
-        id_game: Number(selectedGameId),
+        id_game: parseInt(selectedGameId, 10),
         score: Number(score),
       })
     });
