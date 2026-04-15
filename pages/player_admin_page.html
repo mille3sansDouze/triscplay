@@ -6,18 +6,13 @@
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../styles/main.css">
         <link rel="stylesheet" href="../styles/admin_page.css">
+        <link rel="stylesheet" href="../styles/addgame.css">
         <link rel="icon" href="../assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
         <link rel="icon" href="../assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
     </head>
-    <script src="../scripts/animation.js"></script>
     <script src="../scripts/checksession.js"></script>
     <body>
         
-        <div id="transition">
-            <img id="loader" src="../assets/animation/tour1.png">
-            <p id="loadingText">Chargement...</p>
-        </div>
-
 <nav class="sidebar">
     <div class="logo">Triscplay<span>.</span>^▽^ </div>
     <div class="divider"></div>
@@ -95,21 +90,22 @@
 
     <pre id="userinfo"></pre>
   </nav>
-      <div class = "page_title">
-        <h1>Page d'administration</h1>
-        <div class = "admin_affichage">
-            <div class = "adminjeu">
-                <h2>Jeux</h2>
-                <a class="editBtn" onclick="event.preventDefault(); goToPage('addgame.html');">Voir, éditer ou ajouter des jeux</a>
+        <main>
+            <div id="agmain">
+                <h1>Page de gestion des utilisateurs</h1>
+                <h2>Bienvenue administrateur, que veux-tu faire ?</h2>
+                <div class="mainbuttons">
+                <div class="mainbuttons-top">
+                    <button id="get">Liste des utilisateurs</button>
+                    <button id="del">Supprimer un utilisateur</button>
+                </div>
+                    
+                </div>
             </div>
-            <div class = "adminjeu">
-                <h2>Joueurs</h2>
-                <a class="editBtn" onclick="event.preventDefault(); goToPage('player_admin_page.html');">Voir ou éditer des joueurs</a>
-            </div>
-        </div>
-      </div>
-    </body>
-    
+                <pre id="reponse"></pre>
+        </main>
 
+    </body>
 </html>
+<script src="../scripts/user_gestion.js"></script>
 <script src="../scripts/main.js"></script>

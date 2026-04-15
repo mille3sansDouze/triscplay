@@ -3,12 +3,18 @@
 align-items: center;
 display: flex;
 flex-direction: column;
-margin-top: 150px;
+margin-top: 100px;
 }
-.admin_affichage h1{
+
+.page_title {
+	width:100%;
+}
+
+.page_title h1{
 	color: var(--c3);
 	font-family: "VT323", monospace;
 	text-align: center;
+	margin-top: 100px;
 }
 
 .admin{
