@@ -5,10 +5,16 @@ display: flex;
 flex-direction: column;
 margin-top: 150px;
 }
-.admin_affichage h1{
+
+.page_title {
+	width:100%;
+}
+
+.page_title h1{
 	color: var(--c3);
 	font-family: "VT323", monospace;
 	text-align: center;
+	
 }
 
 .admin{
