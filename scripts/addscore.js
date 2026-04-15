@@ -5,6 +5,8 @@ function getAuthHeaders() {
   };
 }
 
+const scorebtn = document.getElementById("cesiscore");
+
 async function loadGames() {
   const res = await fetch("http://localhost:3000/game/");
   const data = await res.json();
@@ -24,8 +26,7 @@ async function toggleScorePopup() {
   popup.id = "score-popup";
 
   //Insère le pop-up juste au-dessus du bouton 'CESI ton score'
-  const btn = document.getElementById("cesiscore");
-  btn.parentNode.insertBefore(popup, btn);
+  scorebtn.parentNode.insertBefore(popup, scorebtn);
 
   //Crée la liste déroulante où choisir les jeux
   const selectLabel = document.createElement("p");
@@ -125,4 +126,9 @@ async function toggleScorePopup() {
     alert("Impossible de contacter le serveur.");
   }
 });
+
 }
+
+scorebtn.addEventListener("click", () => {
+  toggleScorePopup();
+});
