@@ -13,10 +13,10 @@ function renderData(data) {
     container.innerHTML = data.map(user => `
     <div class="card">
       <div class="card-inner">
-        <h2>${user.email}</h2>
-        <p>${user.id_name}</p>
-        <p class="meta">User name : ${user.user_name} | Role : ${user.role}</p>
-        <small>ID : ${user.id_user}</small>
+        <h2>${user.id_name}</h2>
+        <p>${user.email}</p>
+        <p>ID : ${user.id_user}</p>
+        <p class="meta">${user.user_name} | ${user.role}</p>
       </div>
     </div>
     `).join("");
@@ -24,7 +24,10 @@ function renderData(data) {
 }
 
 async function loadUsers() {
-  const res = await fetch("http://localhost:3000/user/");
+  const res = await fetch(`http://localhost:3000/user/`, {
+    method: "GET",
+    headers: getAuthHeaders()
+});
   const data = await res.json();
   console.log(data);
   renderData(data);
