@@ -93,7 +93,7 @@ async function toggleScorePopup() {
   }
 
   postBtn.addEventListener("click", async () => {
-  const selectedGameId = select.value;   // option.value doit contenir l'id du jeu (number)
+  const selectedGameId = select.value;
   const score = input.value.trim();
 
   if (!selectedGameId || isNaN(parseInt(selectedGameId)) || !score) {
