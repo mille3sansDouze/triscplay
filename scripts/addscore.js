@@ -5,130 +5,140 @@ function getAuthHeaders() {
   };
 }
 
-const scorebtn = document.getElementById("cesiscore");
-
 async function loadGames() {
   const res = await fetch("http://localhost:3000/game/");
   const data = await res.json();
   return data;
 }
 
+function closeModal() {
+  const overlay = document.getElementById("modal-overlay");
+  if (overlay) overlay.remove();
+  window.location.reload()
+}
+
 async function toggleScorePopup() {
-  //Vérifie si un pop-up est déjà ouvert. Si oui, le ferme.
-  const existing = document.getElementById("score-popup");
-  if (existing) {
-    existing.remove();
+  if (document.getElementById("modal-overlay")) {
+    closeModal();
     return;
   }
 
-  //Crée le conteneur 'score-popup'
+  const overlay = document.createElement("div");
+  overlay.className = "modal-overlay";
+  overlay.id = "modal-overlay";
+  overlay.addEventListener("click", (e) => { if (e.target === overlay) closeModal(); });
+
+
   const popup = document.createElement("div");
   popup.id = "score-popup";
 
-  //Insère le pop-up juste au-dessus du bouton 'CESI ton score'
-  scorebtn.parentNode.insertBefore(popup, scorebtn);
+  popup.innerHTML = `
+    <div class="popup-header">
+      <div class="popup-title">NOUVEAU SCORE</div>
+      <button class="popup-close" id="popup-close-btn">✕</button>
+    </div>
 
-  //Crée la liste déroulante où choisir les jeux
-  const selectLabel = document.createElement("p");
-  selectLabel.textContent = "Sélectionne un jeu";
+    <div class="popup-field">
+      <label>JEU</label>
+      <select id="score-game-select" disabled>
+        <option>CHARGEMENT...</option>
+      </select>
+      <div class="popup-loading" id="popup-loading">
+        <div class="spinner"></div>
+        RÉCUPÉRATION DES JEUX...
+      </div>
+    </div>
 
-  const select = document.createElement("select");
-  select.id = "score-game-select";
-  select.disabled = true; //La liste déroulante est désactivée le temps de charger l'API
+    <div class="popup-field">
+      <label>TON SCORE</label>
+      <input type="text" id="score-input" placeholder="Ex : 48500" />
+    </div>
 
-  //Options visibles au chargement
-  const loadingOption = document.createElement("option");
-  loadingOption.textContent = "Chargement...";
-  select.appendChild(loadingOption);
+    <div class="popup-feedback" id="popup-feedback"></div>
 
-  // Champ texte pour le score
-  const inputLabel = document.createElement("p");
-  inputLabel.textContent = "Ton score";
+    <div class="popup-footer">
+      <button class="popup-btn-post" id="popup-post-btn" disabled>POSTER</button>
+      <button class="popup-btn-cancel" id="popup-cancel-btn">ANNULER</button>
+    </div>
+  `;
 
-  const input = document.createElement("input");
-  input.type = "text";
-  input.id = "score-input";
-  input.placeholder = "Ex: 48500";
+  overlay.appendChild(popup);
+  document.body.appendChild(overlay);
 
-  // Bouton Post
-  const postBtn = document.createElement("button");
-  postBtn.textContent = "Post";
-  postBtn.disabled = true; //Désactivé aussi pendant le chargement de l'API
+  document.getElementById("popup-close-btn").addEventListener("click", closeModal);
+  document.getElementById("popup-cancel-btn").addEventListener("click", closeModal);
 
-  // Assemblage des éléments de la pop-up
-  popup.appendChild(selectLabel);
-  popup.appendChild(select);
-  popup.appendChild(inputLabel);
-  popup.appendChild(input);
-  popup.appendChild(postBtn);
+  const onKey = (e) => { if (e.key === "Escape") { closeModal(); document.removeEventListener("keydown", onKey); } };
+  document.addEventListener("keydown", onKey);
 
+  const select   = document.getElementById("score-game-select");
+  const postBtn  = document.getElementById("popup-post-btn");
+  const feedback = document.getElementById("popup-feedback");
+  const loading  = document.getElementById("popup-loading");
+
+  function showFeedback(msg, type) {
+    feedback.textContent = msg;
+    feedback.className = "popup-feedback " + type;
+  }
+
+  /* load games */
   try {
     const games = await loadGames();
-
-    select.innerHTML = "";
-    const defaultOption = document.createElement("option");
-    defaultOption.value = "";
-    defaultOption.textContent = "-- Choisir un jeu --";
-    select.appendChild(defaultOption);
-
-    //Place les jeux de l'API dans la liste déroulante
-    games.forEach((game) => {
-      const option = document.createElement("option");
-      option.value = game.id_game;
-      option.textContent = game.name;
-      select.appendChild(option);
+    loading.style.display = "none";
+    select.innerHTML = `<option value="">-- CHOISIR UN JEU --</option>`;
+    games.forEach(g => {
+      const opt = document.createElement("option");
+      opt.value = g.id_game;
+      opt.textContent = g.name.toUpperCase();
+      select.appendChild(opt);
     });
-
-    //Réactive les boutons une fois que l'API est chargée
     select.disabled = false;
     postBtn.disabled = false;
-    postBtn.style.opacity = "1";
-
-  } catch (error) {
-    select.innerHTML = "";
-    const errorOption = document.createElement("option");
-    errorOption.textContent = "Erreur de chargement";
-    select.appendChild(errorOption);
-    console.error("Impossible de charger les jeux :", error);
+  } catch (err) {
+    loading.style.display = "none";
+    select.innerHTML = `<option>ERREUR DE CHARGEMENT</option>`;
+    showFeedback("// IMPOSSIBLE DE CHARGER LES JEUX", "error");
+    console.error(err);
   }
+
 
   postBtn.addEventListener("click", async () => {
-  const selectedGameId = select.value;
-  const score = input.value.trim();
+    const selectedGameId = select.value;
+    const score = document.getElementById("score-input").value.trim();
 
-  if (!selectedGameId || isNaN(parseInt(selectedGameId)) || !score) {
-    alert("Merci de sélectionner un jeu et d'entrer un score !");
-    return;
-  }
+    if (!selectedGameId) { showFeedback("// SÉLECTIONNE UN JEU D'ABORD", "error"); return; }
+    if (!score || isNaN(Number(score))) { showFeedback("// ENTRE UN SCORE VALIDE", "error"); return; }
 
-  try {
-    const res = await fetch("http://localhost:3000/scoreboard", {
-      method: "POST",
-      headers: getAuthHeaders(),
-      body: JSON.stringify({
-        id_game: parseInt(selectedGameId, 10),
-        score: Number(score),
-      })
-    });
+    postBtn.disabled = true;
+    postBtn.textContent = "ENVOI...";
 
-    if (!res.ok) {
-      const err = await res.json();
-      console.error("Erreur API :", err);
-      alert("Erreur lors de l'envoi du score.");
-      return;
+    try {
+      const res = await fetch("http://localhost:3000/scoreboard", {
+        method: "POST",
+        headers: getAuthHeaders(),
+        body: JSON.stringify({ id_game: parseInt(selectedGameId, 10), score: Number(score) })
+      });
+
+      if (!res.ok) {
+        const err = await res.json();
+        console.error("Erreur API :", err);
+        showFeedback("// ERREUR LORS DE L'ENVOI", "error");
+        postBtn.disabled = false;
+        postBtn.textContent = "POSTER";
+        return;
+      }
+
+      showFeedback("✓ SCORE POSTÉ AVEC SUCCÈS !", "success");
+      postBtn.textContent = "POSTÉ ✓";
+      setTimeout(closeModal, 1200);
+
+    } catch (err) {
+      console.error(err);
+      showFeedback("// IMPOSSIBLE DE CONTACTER LE SERVEUR", "error");
+      postBtn.disabled = false;
+      postBtn.textContent = "POSTER";
     }
-
-    alert("Score posté avec succès !");
-    popup.remove();
-
-  } catch (error) {
-    console.error("Erreur réseau :", error);
-    alert("Impossible de contacter le serveur.");
-  }
-});
-
+  });
+  
 }
 
-scorebtn.addEventListener("click", () => {
-  toggleScorePopup();
-});

@@ -5,6 +5,7 @@
         <title>Triscplay</title>
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../styles/main.css">
+        <link rel="stylesheet" href="../styles/player.css">
         <link rel="icon" href="../assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
         <link rel="icon" href="../assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
     </head>
@@ -27,8 +28,8 @@
       </span>
       <span class="label">RECHERCHER</span>
     </a>
- 
-    <a class="nav-item" href="#">
+    
+    <a class="nav-item" href="./chat.html">
       <span class="icon">
         <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
       </span>
@@ -38,11 +39,14 @@
  
     <a class="nav-item" href="./player_page.html">
       <span class="icon">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20a8 8 0 0116 0"/>
+        </svg>
       </span>
       <span class="label">TON PROFIL</span>
     </a>
-
+    
     <div class="divider"></div>
  
     <a class="nav-item" href="./settings.html" id="divadmin">
@@ -62,16 +66,29 @@
   </nav>
  
   <main class="main">
-    <div class="page-title"></div>
-    <div class="page-sub">// BIENVENUE SUR TRISCPLAY (｡˃ ᵕ ˂ )⸝♡ </div>
-    <div class="cards" id="cardsdiv">
+    <div class="page-title">HERE IS ZE GAME</div>
+    <div class="page-sub">// PLAY OW! ITS FREE AND ITS A GREAT GAME ദ്ദി ( ᵔ ᗜ ᵔ )</div>
 
+    <div class="profileCards">
+      <div class="profileRender" id="profilepre">
+
+      </div>
     </div>
-    <button id="cesiscore">CESI TON SCORE</button>
+ 
+
+    <div class="section-head">
+      <h2>SCORES PAR LES JOUEURS</h2>
+      <div class="section-line"></div>
+    </div>
+ 
+    <div class="scoresGrid" id="scoresGrid"></div>
+
+    <button id="cesiscore" onclick="toggleScorePopup()">CESI TON SCORE</button>
   </main>
  
 </body>
 <script src="../scripts/main.js"></script>
 <script src="../scripts/addscore.js"></script>
 <script src="../scripts/isAdmin.js"></script>
+<script src="../scripts/games.js"></script>
 </html>

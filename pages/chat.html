@@ -5,41 +5,22 @@
         <title>Triscplay</title>
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../styles/main.css">
-        <link rel="stylesheet" href="../styles/admin_page.css">
+
         <link rel="icon" href="../assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
         <link rel="icon" href="../assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
     </head>
-    <script src="../scripts/animation.js"></script>
-    
-    <script>
-      async function isUserAdmin() {
-        const user_cookie = localStorage.getItem("user");
-        if (!user_cookie) {
-            alert("erreur de connexion veuillez vous reconnecter")
-            localStorage.clear()
-            window.location.href = "./page_connexion.html"
-            return;
+    <script src="../scripts/checksession.js"></script>
+    <style>
+        .imgmarceau{
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           max-width: 1200px;
         }
-        const user = JSON.parse(user_cookie);
-        const res = await fetch(`http://localhost:3000/user/${user.id_user}`);
-        const data = await res.json();
-        
-        if(data.role != "admin"){
-          window.location.href = "./main.html"
-        }
-      }
 
-      isUserAdmin()
-
-    </script>
-    <body>
-        
-        <div id="transition">
-            <img id="loader" src="../assets/animation/tour1.png">
-            <p id="loadingText">Chargement...</p>
-        </div>
-
-<nav class="sidebar">
+    </style>
+<body>
+  <nav class="sidebar">
     <div class="logo">Triscplay<span>.</span>^▽^ </div>
     <div class="divider"></div>
  
@@ -50,15 +31,14 @@
       <span class="label">ACCUEIL</span>
     </a>
  
-    <a class="nav-item" href="./search.html">
+    <a class="nav-item" href="../index.html">
       <span class="icon">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </span>
       <span class="label">RECHERCHER</span>
     </a>
- 
 
-    <a class="nav-item" href="./chat.html">
+    <a class="nav-item active" href="#">
       <span class="icon">
         <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
       </span>
@@ -66,17 +46,16 @@
       <span class="badge">12</span>
     </a>
  
-    <a class="nav-item" href="./player_page.html" >
-        <span class="icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 20a8 8 0 0116 0"/>
-            </svg>
-        </span>
+    <a class="nav-item" href="./player_page.html">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 20a8 8 0 0116 0"/>
+        </svg>
+      </span>
       <span class="label">TON PROFIL</span>
     </a>
       
-
     <div class="divider"></div>
  
     <a class="nav-item" href="./settings.html" id="divadmin">
@@ -91,24 +70,23 @@
  
 
     <pre id="userinfo"></pre>
+  
+ 
   </nav>
-      <div class = "page_title">
-        <h1>Page d'administration</h1>
-        <div class = "admin_affichage">
-            <div class = "adminjeu">
-                <h2>Jeux</h2>
-                <a class="editBtn" onclick="event.preventDefault(); goToPage('addgame.html');">Voir, éditer ou ajouter des jeux</a>
-            </div>
-            <div class = "adminjeu">
-                <h2>Joueurs</h2>
-                <a class="editBtn" onclick="event.preventDefault(); goToPage('player_admin_page.html');">Voir ou éditer des joueurs</a>
-            </div>
-        </div>
-      </div>
-    </body>
-    <script src="../scripts/main.js"></script>
-    <script src="../scripts/checksession.js"></script>
-    <script src="../scripts/isAdmin.js"></script>
+ 
+  <main class="main">
+    <div class="page-title">EH OHHH TU FAIS QUOI LA ?</div>
+    <div class="page-sub">// DESO MON FRERE ICI C'EST EN TRAVAUX, MARCEAU EST PEUT ETRE STRONG MAIS PAS ASSER POUR CETTE FEATURE (o´〰`o) </div>
+    <div class="page-sub">// LA SEULE UTILITEE DE CETTE PAGE C'EST LE BOUTON CESI TON SCORE :( </div>
+    </div>
+ 
+    <img src="../assets/marceauwip.png" alt="marceau sur le chantier avec un affichage work in progress" class="imgmarceau">
+    
+    <button id="cesiscore" onclick="toggleScorePopup()">CESI TON SCORE</button>
+  </main>
+ 
+</body>
+<script src="../scripts/addscore.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/isAdmin.js"></script>
 </html>
-
-

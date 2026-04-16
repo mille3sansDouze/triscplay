@@ -55,6 +55,11 @@ async function postGame() {
     return
   }
 
+  let url = document.getElementById("imageUrl").value
+  if (!url || typeof url !== "string" || url.length === 0) {
+    alert("L'url est invalide.")
+    return
+  }
   
   let pegi = document.getElementById("gamePegi").value
   if (isNaN(pegi) || pegi < 0) {
@@ -77,7 +82,7 @@ async function postGame() {
   document.getElementById("gamePlayerCount").value = "";
   document.getElementById("gamePegi").value = "";
   document.getElementById("gameMultiplayer").value = "";
-  
+  document.getElementById("imageUrl").value=""
 
   try {
     const res = await fetch("http://localhost:3000/game", {
@@ -88,7 +93,8 @@ async function postGame() {
         description: description,
         pegi: pegi,
         player_count: playercount,  
-        is_multiplayer: false
+        is_multiplayer: false,
+        img_url: url
       })
     });
 

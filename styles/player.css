@@ -84,13 +84,13 @@ body {
     bottom: 2px;
     right: 2px;
     background: var(--c5);
-    font-family: "Doto", sans-serif;
+    font-family: "VT323", sans-serif;
     font-size: 12px;
     letter-spacing: 1px;
     padding: 2px 7px;
     border-radius: 6px;
     box-shadow: 0 0 10px var(--c5);
-    color: #fff;
+    color: var(--c3);
 }
 
 
