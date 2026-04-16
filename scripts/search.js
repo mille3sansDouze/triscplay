@@ -1,3 +1,5 @@
+const searchbar = document.getElementById("searchbar");
+
 function getAuthHeaders() {
   return {
     "Content-Type": "application/json",
@@ -5,6 +7,23 @@ function getAuthHeaders() {
   };
 }
 
+//Fonction pour afficher un texte sur l'input de recherche qui disparait a la saisie
+document.querySelectorAll('.input-wrap').forEach(wrap => {
+  const inp = wrap.querySelector('input');
+  const lbl = wrap.querySelector('.overlay-label');
+
+  function update() {
+    lbl.classList.toggle('hidden', inp.value.length > 0);
+  }
+
+  inp.addEventListener('input', update);
+  inp.addEventListener('focus', () => lbl.classList.add('hidden'));
+  inp.addEventListener('blur', update);
+  
+  update();
+});
+
+//Fonction pour mapper les données qu'on reçoit en chargeant les jeux
 function renderData(data) {
   const container = document.getElementById("reponse");
     container.innerHTML = data.map(game => `
@@ -20,8 +39,6 @@ function renderData(data) {
 
 }
 
-
-
 /*=============================*/
 
 async function loadGames() {
@@ -33,4 +50,22 @@ async function loadGames() {
 
 /*=============================*/
 
+async function searchGame() {
+  const query = searchbar.value.trim().toLowerCase();
+  const res = await fetch("http://localhost:3000/game/");
+  const data = await res.json();
+
+  if (query === "") {
+    renderData(data);
+  } else {
+    const filtered = data.filter(game =>
+      game.name.toLowerCase().includes(query)
+    );
+    renderData(filtered);
+  }
+}
+
+/*=============================*/
+
 loadGames();
+searchbar.addEventListener("input", searchGame);

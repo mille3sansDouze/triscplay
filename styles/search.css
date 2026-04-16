@@ -1,0 +1,38 @@
+.input-wrap {
+  position: relative;
+}
+
+.overlay-label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: var(--c5);
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 24px);
+}
+
+.overlay-label.hidden {
+  opacity: 0;
+}
+
+input.custom {
+  width: 15%;
+  background-color: var(--c2);
+  border:4px;
+  border-color: var(4);
+  box-sizing: border-box;
+  padding: 10px 12px;
+  font-size: 15px;
+  outline: none;
+}
+
+input.custom::placeholder {
+  color: transparent;
+}
+
