@@ -1,5 +1,6 @@
 .input-wrap {
   position: relative;
+  margin:25px;
 }
 
 .overlay-label {
@@ -22,7 +23,7 @@
 }
 
 input.custom {
-  width: 15%;
+  width: 20%;
   background-color: var(--c2);
   border:4px;
   border-color: var(4);
@@ -34,4 +35,10 @@ input.custom {
 
 input.custom::placeholder {
   color: transparent;
+}
+
+.card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
