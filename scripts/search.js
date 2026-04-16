@@ -26,17 +26,16 @@ document.querySelectorAll('.input-wrap').forEach(wrap => {
 //Fonction pour mapper les données qu'on reçoit en chargeant les jeux
 function renderData(data) {
   const container = document.getElementById("reponse");
-    container.innerHTML = data.map(game => `
+  container.innerHTML = data.map(game => `
     <div class="card">
-      <div class="card-inner">
-        <h2>${game.name}</h2>
-        <p>${game.description}</p>
-        <p class="meta">PEGI : ${game.pegi} | Joueurs : ${game.player_count} | Multi : ${game.is_multiplayer ? "Oui" : "Non"}</p>
-        <small>ID : ${game.id_game}</small>
-      </div>
+      <div class="card-value">${game.name}</div>
+      <div class="card-label">${game.description}</div>
+      <div class="card-desc">JOUEURS : ${game.player_count}</div>
+      <div class="card-desc">MULTI : ${game.is_multiplayer ? "OUI" : "NON"}</div>
+      <div class="card-desc">PEGI ${game.pegi}</div>
+      
     </div>
-    `).join("");
-
+  `).join("");
 }
 
 /*=============================*/

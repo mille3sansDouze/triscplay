@@ -108,7 +108,8 @@ async function postGame() {
 
 async function delGame(id) {
     const res = await fetch(`http://localhost:3000/game/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
+        headers: getAuthHeaders()
     });
       try {
         const data = await res.json();
