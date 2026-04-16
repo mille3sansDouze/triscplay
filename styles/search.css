@@ -36,3 +36,9 @@ input.custom {
 input.custom::placeholder {
   color: transparent;
 }
+
+.card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}

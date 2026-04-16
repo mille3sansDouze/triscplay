@@ -27,14 +27,14 @@ document.querySelectorAll('.input-wrap').forEach(wrap => {
 function renderData(data) {
   const container = document.getElementById("reponse");
   container.innerHTML = data.map(game => `
-    <div class="card">
+    <a class="card" href="./game_page.html?id=${game.id_game}">
       <div class="card-value">${game.name}</div>
       <div class="card-label">${game.description}</div>
       <div class="card-desc">JOUEURS : ${game.player_count}</div>
       <div class="card-desc">MULTI : ${game.is_multiplayer ? "OUI" : "NON"}</div>
       <div class="card-desc">PEGI ${game.pegi}</div>
       
-    </div>
+    </a>
   `).join("");
 }
 
