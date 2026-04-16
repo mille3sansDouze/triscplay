@@ -5,41 +5,12 @@
         <title>Triscplay</title>
         <link rel="stylesheet" href="../styles.css">
         <link rel="stylesheet" href="../styles/main.css">
-        <link rel="stylesheet" href="../styles/admin_page.css">
         <link rel="icon" href="../assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
         <link rel="icon" href="../assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
     </head>
-    <script src="../scripts/animation.js"></script>
-    
-    <script>
-      async function isUserAdmin() {
-        const user_cookie = localStorage.getItem("user");
-        if (!user_cookie) {
-            alert("erreur de connexion veuillez vous reconnecter")
-            localStorage.clear()
-            window.location.href = "./page_connexion.html"
-            return;
-        }
-        const user = JSON.parse(user_cookie);
-        const res = await fetch(`http://localhost:3000/user/${user.id_user}`);
-        const data = await res.json();
-        
-        if(data.role != "admin"){
-          window.location.href = "./main.html"
-        }
-      }
-
-      isUserAdmin()
-
-    </script>
-    <body>
-        
-        <div id="transition">
-            <img id="loader" src="../assets/animation/tour1.png">
-            <p id="loadingText">Chargement...</p>
-        </div>
-
-<nav class="sidebar">
+    <script src="../scripts/checksession.js"></script>
+<body>
+  <nav class="sidebar">
     <div class="logo">Triscplay<span>.</span>^▽^ </div>
     <div class="divider"></div>
  
@@ -50,7 +21,7 @@
       <span class="label">ACCUEIL</span>
     </a>
  
-    <a class="nav-item" href="./search.html">
+    <a class="nav-item active" href="./search.html">
       <span class="icon">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </span>
@@ -65,7 +36,7 @@
       <span class="badge">12</span>
     </a>
  
-    <a class="nav-item" href="./player_page.html" >
+    <a class="nav-item" href="./player_page.html">
       <span class="icon">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
       </span>
@@ -86,24 +57,19 @@
  
 
     <pre id="userinfo"></pre>
+  
+ 
   </nav>
-      <div class = "page_title">
-        <h1>Page d'administration</h1>
-        <div class = "admin_affichage">
-            <div class = "adminjeu">
-                <h2>Jeux</h2>
-                <a class="editBtn" onclick="event.preventDefault(); goToPage('addgame.html');">Voir, éditer ou ajouter des jeux</a>
-            </div>
-            <div class = "adminjeu">
-                <h2>Joueurs</h2>
-                <a class="editBtn" onclick="event.preventDefault(); goToPage('player_admin_page.html');">Voir ou éditer des joueurs</a>
-            </div>
-        </div>
-      </div>
-    </body>
-    <script src="../scripts/main.js"></script>
-    <script src="../scripts/checksession.js"></script>
-    <script src="../scripts/isAdmin.js"></script>
+ 
+  <main class="main">
+    <div class="page-title">CHERCHE UN JEU</div>
+    <pre id="reponse"></pre>
+    <button id="cesiscore">CESI TON SCORE</button>
+  </main>
+ 
+</body>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/addscore.js"></script>
+<script src="../scripts/isAdmin.js"></script>
+<script src="../scripts/search.js"></script>
 </html>
-
-
