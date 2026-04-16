@@ -51,12 +51,7 @@
       <span class="label">TON PROFIL</span>
     </a>
       
-    <a class="nav-item" href="./admin_page.html">
-      <span class="icon">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      </span>
-      <span class="label">ADMIN PANEL</span>
-    </a>
+
  
     <!-- <a class="nav-item" href="#">
       <span class="icon">
@@ -74,7 +69,7 @@
  
     <div class="divider"></div>
  
-    <a class="nav-item" href="./settings.html">
+    <a class="nav-item" href="./settings.html" id="divadmin">
       <span class="icon">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
       </span>
@@ -93,47 +88,8 @@
   <main class="main">
     <div class="page-title">ACCUEIL</div>
     <div class="page-sub">// BIENVENUE SUR TRISCPLAY (｡˃ ᵕ ˂ )⸝♡ </div>
-    <div class="cards">
-      <div class="card">
-        <div class="card-label">JEU</div>
-        <div class="card-value">4 821</div>
-        <div class="card-desc">POINTS</div>
-      </div>
-      <div class="card">
-        <div class="card-label">JEU</div>
-        <div class="card-value">18.3K</div>
-        <div class="card-desc">money $</div>
-      </div>
-      <div class="card">
-        <div class="card-label">JEU</div>
-        <div class="card-value">9 460</div>
-        <div class="card-desc">points</div>
-      </div>
-      <div class="card">
-        <div class="card-label">JEU</div>
-        <div class="card-value">99.9%</div>
-        <div class="card-desc">accuracy</div>
-      </div>
-       <div class="card">
-        <div class="card-label">JEU</div>
-        <div class="card-value">99.9%</div>
-        <div class="card-desc">accuracy</div>
-      </div>
-       <div class="card">
-        <div class="card-label">JEU</div>
-        <div class="card-value">99.9%</div>
-        <div class="card-desc">accuracy</div>
-      </div>
-       <div class="card">
-        <div class="card-label">JEU</div>
-        <div class="card-value">99.9%</div>
-        <div class="card-desc">accuracy</div>
-      </div>
-       <div class="card">
-        <div class="card-label">JEU</div>
-        <div class="card-value">99.9%</div>
-        <div class="card-desc">accuracy</div>
-      </div>
+    <div class="cards" id="cardsdiv">
+
     </div>
     <button id="cesiscore">CESI TON SCORE</button>
   </main>
@@ -141,4 +97,6 @@
 </body>
 <script src="../scripts/main.js"></script>
 <script src="../scripts/addscore.js"></script>
+<script src="../scripts/isAdmin.js"></script>
+<script src="../scripts/divmain.js"></script>
 </html>
