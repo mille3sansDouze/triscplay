@@ -73,16 +73,7 @@ async function loadGame() {
                 <div><span>TOTAL SCORE</span>${total}</div>
                 <div><span>NOMBRES DE SCORE</span>${data.length}</div>
             </div>
-        </div>
-
-        <div class="status-row">
-            <div class="dot"></div>
-            <div class="status-label">EN LIGNE</div>
-        </div>
-    
-    `
-
-
+        </div>`
 }
 
 loadGame();

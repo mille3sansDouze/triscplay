@@ -11,12 +11,32 @@
     </head>
     <script src="../scripts/checksession.js"></script>
     <style>
-        .imgmarceau{
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           max-width: 1200px;
-        }
+      .imgmarceau {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 520px; 
+        margin: 32px auto 0;
+        animation: popIn 2.45s cubic-bezier(.77,0,.18,1) both;
+      }
+
+      .imgmarceau img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        border: 1px solid rgba(233,69,96,0.25);
+        box-shadow: 0 0 40px rgba(233,69,96,0.12);
+      }
+
+      @keyframes popIn {
+        from { opacity: 0; transform: translateX(-700px) scale(0.67); }
+        to   { opacity: 1; transform: translateY(0px) scale(1); }
+      }
+
+      @media (max-width: 600px) {
+        .imgmarceau { max-width: 90vw; margin-top: 20px; }
+      }
 
     </style>
 <body>
@@ -31,7 +51,7 @@
       <span class="label">ACCUEIL</span>
     </a>
  
-    <a class="nav-item" href="../index.html">
+    <a class="nav-item" href="./search.html">
       <span class="icon">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </span>
@@ -81,7 +101,8 @@
     </div>
  
     <img src="../assets/marceauwip.png" alt="marceau sur le chantier avec un affichage work in progress" class="imgmarceau">
-    
+    <div class="page-sub">// et aussi les 12 notif c'est du scam lol </div>
+
     <button id="cesiscore" onclick="toggleScorePopup()">CESI TON SCORE</button>
   </main>
  
