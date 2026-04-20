@@ -1,4 +1,6 @@
 const grid = document.getElementById('scoresGrid');
+const params = new URLSearchParams(window.location.search);
+const idGame = params.get("id");
 
 async function loadGame() {
     const user_cookie = localStorage.getItem("user");
@@ -9,7 +11,7 @@ async function loadGame() {
     let data = []; 
 
     try {
-        const res = await fetch(`http://localhost:3000/scoreboard/game/4`);
+        const res = await fetch(`http://localhost:3000/scoreboard/game/${idGame}`);
         data = await res.json();
         console.log(data);
     } catch {
@@ -38,7 +40,7 @@ async function loadGame() {
         grid.appendChild(card);
     });
 
-    const res = await fetch(`http://localhost:3000/game/4`);
+    const res = await fetch(`http://localhost:3000/game/${idGame}`);
     const gamedata = await res.json();
     console.log(gamedata);
     console.log(data.length);
