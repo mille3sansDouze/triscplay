@@ -2,38 +2,75 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Triscplay - Connexion</title>
-
-    <link rel="stylesheet" href="../styles.css">
+    <title>Triscplay — Connexion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/connexion_page.css">
     <link rel="icon" href="assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
     <link rel="icon" href="assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
 </head>
+
 <script src="../scripts/connexion.js"></script>
-<body >
-    
-    <header class="header">
-        <div class="logo"><a href="../index.html"><img src="../assets/logo.png" width="50" alt="logo"></a></div>
-        <h1 class="h1" >Triscplay</h1>
 
-    </header>
-    <h1 id="connexion-title">Connecte-toi</h1>
-    <div class="connexion-div">
-        <div>
-            <h2 class="connexion-texte">Email</h2>
-            <input class="input-connexion" type="email" id="email">
-            <h2 class="connexion-texte">Mot de passe</h2>
-            <input class="input-connexion" type="password" id="password">
-            <h2 class="mdp-oublie">Mot de passe oublié?</h2>
-        </div>
-        
-        <button class="connexion-button-connexion"><a onclick="connexion()">Connexion</a></button>
-        <h2 class="connexion-texte">
-            Tu n'as pas encore de compte Triscplay ? 
-            <a href="page_inscription.html">inscription</a>
-        </h2>
+<body>
+  <div class="grid-bg"></div>
+
+  <div class="wrapper">
+    <div class="brand">
+      <div class="brand-logo">
+        <a href="../index.html"><img src="../assets/logo.png" alt="logo Triscplay"></a>
+        <div class="brand-name">TRISCPLAY<span>.</span></div>
+      </div>
+      <div class="brand-sub">// PORTAIL D'AUTHENTIFICATION</div>
     </div>
-   
-</body>
+    <div class="card">
+      <div class="card-title">CONNEXION</div>
+      <div class="card-sub">// ENTRE TES IDENTIFIANTS POUR ACCÉDER</div>
 
+      <div class="feedback" id="feedback"></div>
+      <div class="field">
+        <label>EMAIL</label>
+        <div class="input-wrap">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <input type="email" id="email" placeholder="marceau@triscplay.bzh" autocomplete="email"/>
+        </div>
+      </div>
+    
+      <div class="field">
+        <label>MOT DE PASSE</label>
+        <div class="input-wrap">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <input type="password" id="password" placeholder="••••••••" autocomplete="current-password"/>
+          <button class="eye-btn" type="button" onclick="togglePwd(this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <a href="#" class="forgot">// MOT DE PASSE OUBLIÉ ?</a>
+
+      <button class="btn-connexion" onclick="connexion()">SE CONNECTER</button>
+
+      <div class="divider-line"><span>OU</span></div>
+
+      <div class="signup-link">
+        PAS ENCORE DE COMPTE ?
+        <a href="page_inscription.html">INSCRIPTION</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function togglePwd(btn) {
+      const input = document.getElementById('password');
+      const isText = input.type === 'text';
+      input.type = isText ? 'password' : 'text';
+      btn.querySelector('svg').innerHTML = isText
+        ? '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'
+        : '<path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>';
+    }
+  </script>
+</body>
 </html>

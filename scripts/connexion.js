@@ -85,3 +85,9 @@ async function checkSession() {
 
 checkSession();
 
+
+document.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      connexion();
+    }
+});

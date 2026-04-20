@@ -1,6 +1,7 @@
 .input-wrap {
   position: relative;
   margin:25px;
+  
 }
 
 .overlay-label {
@@ -31,6 +32,7 @@ input.custom {
   padding: 10px 12px;
   font-size: 15px;
   outline: none;
+  border-radius: 8px;
 }
 
 input.custom::placeholder {

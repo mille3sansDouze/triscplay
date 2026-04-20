@@ -126,8 +126,7 @@ async function loadProfile() {
 loadProfile();
 
 
-
 function getLevel(score) {
-  const base = 2; 
-  return Math.floor(Math.log(score + 1) / Math.log(base) * 10);
+  if (score <= 0) return 1;
+  return Math.floor((0.9 * Math.pow(score, 1.1)) / (1 + 0.002 * score));
 }

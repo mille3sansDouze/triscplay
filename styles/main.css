@@ -136,13 +136,13 @@
 /* notification badge */
 .badge {
     margin-left: auto;
-    background: var(--c5);
+    background: var(--c1);
     color: #fff;
     font-size: 13px;
     font-family: "Doto", sans-serif;
     padding: 1px 7px;
     border-radius: 4px;
-    box-shadow: 0 0 8px var(--c5);
+    box-shadow: 0 0 8px var(--c1);
     flex-shrink: 0;
 }
 

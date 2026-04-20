@@ -2,47 +2,92 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Triscplay - inscription</title>
-
-    <link rel="stylesheet" href="../styles.css">
+    <title>Triscplay — Connexion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/connexion_page.css">
     <link rel="icon" href="assets/darkfavicon.svg" media="(prefers-color-scheme: dark)">
     <link rel="icon" href="assets/lightfavicon.svg" media="(prefers-color-scheme: light)">
 </head>
+
 <script src="../scripts/inscription.js"></script>
 
-<body >
-    
-    <header class="header">
-        <div class="logo"><a href="../index.html"><img src="../assets/logo.png" width="50" alt="logo"></a></div>
-        <h1 class="h1" >Triscplay</h1>
+<body>
+  <div class="grid-bg"></div>
 
-
-    </header>
-    <h1 id="connexion-title">inscris-toi</h1>
-    <div class="connexion-div">
-        <div>
-            <h2 class="connexion-texte">Email</h2>
-            <input class="input-connexion" type="email" id="email">
-            <h2 class="connexion-texte">Nom d'affichage</h2>
-            <input class="input-connexion" type="text" id="displayname">
-            <h2 class="connexion-texte">Nom d'utilisateur</h2>
-            <input class="input-connexion" type="text" id="username">
-            <h2 class="connexion-texte">Mot de passe</h2>
-            <input class="input-connexion" type="password" id="password">
-        </div>
-        <button class="connexion-button-connexion margin"><a href="../pages/main.html" onclick="inscription()">Inscription</a></button>
-        <h2 class="connexion-texte">
-            Vous avez déjà un compte ?
-            <a href="page_connexion.html" >
-                Connectez-vous
-            </a>
-        </h2>
+  <div class="wrapper">
+    <div class="brand">
+      <div class="brand-logo">
+        <a href="../index.html"><img src="../assets/logo.png" alt="logo Triscplay"></a>
+        <div class="brand-name">TRISCPLAY<span>.</span></div>
+      </div>
+      <div class="brand-sub">// PORTAIL D'AUTHENTIFICATION</div>
     </div>
-   
+    <div class="card">
+      <div class="card-title">BIENVENUE SUR TRISCPLAY !!!</div>
+      <div class="card-sub">// ENREGISTRE TOI ICI AVANT DE POUVOIR ACCEDER A TRISCPLAY</div>
 
+      <div class="feedback" id="feedback"></div>
+      <div class="field">
+        <label>EMAIL</label>
+        <div class="input-wrap">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <input type="email" id="email" placeholder="marceau@triscplay.bzh" autocomplete="email"/>
+        </div>
+      </div>
 
-
+        <div class="field">
+        <label>NOM D'AFFICHAGE</label>
+        <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4"/>
+                <path d="M4 20a8 8 0 0116 0"/>
+            </svg>
+            <input type="text" id="displayname" placeholder="marceauBG67"/>
+        </div>
+      </div>
     
+        <div class="field">
+        <label>NOM D'UTILISATEUR <br>DÉFINITIF NE PEUT PAS ETRE MODIFIÉ PLUS TARD</label>
+        <div class="input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20a8 8 0 1 1 5.3-14.1"/>
+                <path d="M15 12a3 3 0 1 1-3-3c1.7 0 3 1.3 3 3v3c0 1 .8 1.5 1.5 1.5S18 16 18 15v-3"/>
+            </svg>
+            <input type="text" id="username" placeholder="MarceauUwU"/>
+        </div>
+      </div>
+      <div class="field">
+        <label>MOT DE PASSE</label>
+        <div class="input-wrap">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          <input type="password" id="password" placeholder="••••••••" autocomplete="current-password"/>
+          <button class="eye-btn" type="button" onclick="togglePwd(this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <button class="btn-connexion" onclick="inscription()">S'INSCRIRE</button>
+
+      <div class="divider-line"><span>OU</span></div>
+
+      <div class="signup-link">
+        TU AS UN COMPTE ?
+        <a href="page_connexion.html">CONNECTE TOI</a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function togglePwd(btn) {
+      const input = document.getElementById('password');
+      const isText = input.type === 'text';
+      input.type = isText ? 'password' : 'text';
+      btn.querySelector('svg').innerHTML = isText
+        ? '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'
+        : '<path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>';
+    }
+  </script>
 </body>
 </html>
