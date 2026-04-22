@@ -1,4 +1,4 @@
-const addbtn = document.getElementById("get")
+//const addbtn = document.getElementById("get")
 const delbtn = document.getElementById("del")
 
 function getAuthHeaders() {
@@ -33,6 +33,14 @@ async function loadUsers() {
   renderData(data);
 }
 
+async function updateUser() {
+  const res = await fetch(`http://localhost:3000/user/${id}`, {
+    method: "UPDATE",
+    headers: getAuthHeaders()
+  });
+  
+}
+
 async function delUser(id) {
     const res = await fetch(`http://localhost:3000/user/${id}`, {
         method: "DELETE",
@@ -46,11 +54,12 @@ async function delUser(id) {
     await loadUsers()
 }
 
+loadUsers();
 
-addbtn.addEventListener("click", () => {
+/*addbtn.addEventListener("click", () => {
     loadUsers();
     
-})
+})*/
 
 delbtn.addEventListener("click", () => {
     const id = prompt("id del")
