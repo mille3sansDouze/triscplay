@@ -49,7 +49,6 @@ async function submitEdit() {
   const originalRole = document.getElementById("edit-role").dataset.original;
   const newRole = document.getElementById("edit-role").value;
 
-  // Appel 1 : mise à jour des infos de base
   const res = await fetch(`http://localhost:3000/user/${id}`, {
     method: "PATCH",
     headers: getAuthHeaders(),
@@ -65,7 +64,6 @@ async function submitEdit() {
     console.log(data);
   } catch(e) {}
 
-  // Appel 2 : mise à jour du rôle uniquement si modifié
   if (newRole !== originalRole) {
     const resRole = await fetch(`http://localhost:3000/user/${id}/role`, {
       method: "PATCH",

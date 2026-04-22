@@ -127,7 +127,7 @@
             <input type="hidden" id="edit-id">
 
             <div class="popup-field">
-              <label>NAME</label>
+              <label>NOM</label>
               <input type="text" id="edit-name">
             </div>
             <div class="popup-field">
@@ -135,12 +135,31 @@
               <input type="text" id="edit-description">
             </div>
             <div class="popup-field">
-              <label>USERNAME</label>
-              <input type="text" id="edit-user_name">
+              <label>URL DU LOGO</label>
+              <input type="text" id="edit-img_url">
             </div>
             <div class="popup-field">
-              <label>RÔLE</label>
-              <input type="text" id="edit-role" data-original="">
+              <label>NOMBRE DE JOUEURS</label>
+              <input type="text" id="edit-player_count">
+            </div>
+            <div class="popup-field">
+              <label>PEGI</label>
+              <select id="edit-gamePegi">
+                <option value="">Pegi...</option>
+                <option value="3">3</option>
+                <option value="7">7</option>
+                <option value="12">12</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+              </select>
+            </div>
+            <div class="popup-field">
+              <label>MULTIJOUEUR ?</labem>
+              <select id="edit-gameMultiplayer">
+                <option value="">Multijoueur ?</option>
+                <option value="true">Oui</option>
+                <option value="false">Non</option>
+              </select>
             </div>
 
             <div class="popup-feedback" id="edit-feedback"></div>
