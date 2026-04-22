@@ -84,7 +84,6 @@
                 <h2>Bienvenue administrateur, que veux-tu faire ?</h2>
                 <div class="mainbuttons">
                 <div class="mainbuttons-top">
-                    <button id="get">See the games (get)</button>
                     <button id="del">Delete a game (delete)</button>
                 </div>
                     <form id="addgameform">
@@ -117,6 +116,42 @@
                 <pre id="reponse"></pre>
         </main>
 
+        <div id="edit-modal">
+          <div id="edit-modal-inner">
+
+            <div class="popup-header">
+              <span class="popup-title">EDIT USER</span>
+              <button class="popup-close" onclick="closeEditModal()">✕</button>
+            </div>
+
+            <input type="hidden" id="edit-id">
+
+            <div class="popup-field">
+              <label>NAME</label>
+              <input type="text" id="edit-name">
+            </div>
+            <div class="popup-field">
+              <label>DESCRIPTION</label>
+              <input type="text" id="edit-description">
+            </div>
+            <div class="popup-field">
+              <label>USERNAME</label>
+              <input type="text" id="edit-user_name">
+            </div>
+            <div class="popup-field">
+              <label>RÔLE</label>
+              <input type="text" id="edit-role" data-original="">
+            </div>
+
+            <div class="popup-feedback" id="edit-feedback"></div>
+
+            <div class="popup-footer">
+              <button class="popup-btn-post" onclick="submitEdit()">ENREGISTRER</button>
+              <button class="popup-btn-cancel" onclick="closeEditModal()">ANNULER</button>
+            </div>
+
+          </div>
+        </div>
     </body>
 </html>
 <script src="../scripts/addgame.js"></script>

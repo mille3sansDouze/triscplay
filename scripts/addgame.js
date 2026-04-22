@@ -1,6 +1,4 @@
-const addbtn = document.getElementById("get")
 const delbtn = document.getElementById("del")
-/*const addbtn = document.getElementById("get")*/
 
 
 function getAuthHeaders() {
@@ -130,10 +128,7 @@ async function delGame(id) {
 /*=============================*/
 
 
-addbtn.addEventListener("click", () => {
-    loadGames();
-    
-})
+loadGames();
 
 delbtn.addEventListener("click", () => {
     const id = prompt("id del")

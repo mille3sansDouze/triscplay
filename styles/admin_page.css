@@ -193,7 +193,7 @@ margin-top: 100px;
     border-radius: 8px;
     background: transparent;
     border: 1px solid rgba(255,255,255,0.12);
-    color: rgba(255,255,255,0.5);
+    color: var(--c5);
     font-size: 20px;
     cursor: pointer;
     display: flex; align-items: center; justify-content: center;
@@ -214,9 +214,10 @@ margin-top: 100px;
 }
 #edit-modal .popup-field label {
     font-family: "Doto", sans-serif;
-    font-size: 11px;
+	font-weight: 500;
+    font-size: 12px;
     letter-spacing: 3px;
-    color: rgba(255,255,255,0.38);
+    color: white;
 }
 #edit-modal .popup-field input[type="text"],
 #edit-modal .popup-field input[type="email"] {
