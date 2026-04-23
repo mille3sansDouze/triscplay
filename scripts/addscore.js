@@ -142,3 +142,18 @@ async function toggleScorePopup() {
   
 }
 
+async function deleteScore(id, cardElement) {
+  const res = await fetch(`http://localhost:3000/scoreboard/${id}`, {
+    method: "DELETE",
+    headers: getAuthHeaders()
+  });
+
+  if (res.ok) {
+    cardElement.remove();
+  } else {
+    try {
+      const err = await res.json();
+      console.error("Erreur suppression :", err);
+    } catch(e) {}
+  }
+}

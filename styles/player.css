@@ -212,7 +212,7 @@ body {
 
 .scoresGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 16px;
     margin-bottom: 28px;
 }
@@ -258,7 +258,26 @@ body {
     opacity: 0.9;
     margin-bottom: 6px;
     position: relative;
+    display: flex;
+    justify-content: space-between;
 }
+
+.card-close {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.5);
+    font-size: 20px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    font-family: "VT323", monospace;
+    line-height: 1;
+}
+
+.card-close:hover { background: rgba(233,69,96,0.15); border-color: rgba(234, 22, 58, 0.4); color: var(--c5); }
+
 .score-value {
     font-family: "Doto", sans-serif;
     font-size: 36px;
