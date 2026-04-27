@@ -187,7 +187,8 @@ body {
 }
 .status-label {
     font-family: "Doto", sans-serif;
-    font-size: 11px;
+    font-size: 16px;
+    font-weight: 800;
     letter-spacing: 2px;
     color: #4ecca3;
 }

@@ -16,7 +16,8 @@ body {
 
 .page-header {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items:left;
     gap: 16px;
     margin-bottom: 40px;
 }
@@ -30,10 +31,11 @@ body {
 }
 .page-sub {
     font-family: "VT323", monospace;
+    font-weight: 600;
     font-size: 18px;
-    color: rgba(255,255,255,0.3);
+    color: white;
     letter-spacing: 2px;
-    padding-bottom: 4px;
+    margin-bottom: 40px;
 }
 
 
@@ -90,9 +92,10 @@ body {
 }
 .card-title {
     font-family: "Doto", sans-serif;
-    font-size: 14px;
+    font-size: 24px;
     letter-spacing: 3px;
     color: var(--c5);
+    font-weight: 800;
     opacity: 0.85;
 }
 
@@ -145,7 +148,7 @@ body {
 .avatar-actions p {
     font-family: "VT323", monospace;
     font-size: 17px;
-    color: rgba(255,255,255,0.35);
+    color: var(--c4);
     letter-spacing: 1px;
     line-height: 1.4;
 }
@@ -181,9 +184,10 @@ body {
 }
 .field label {
     font-family: "Doto", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 800;
     letter-spacing: 3px;
-    color: rgba(255,255,255,0.84);
+    color: var(--c4);
     text-transform: uppercase;
 }
 .input-wrap {
@@ -263,8 +267,9 @@ body {
 .strength-label {
     font-family: "Doto", sans-serif;
     font-size: 17px;
+    font-weight: 800;
     letter-spacing: 2px;
-    color: rgba(255,255,255,1);
+    color: white;
 }
 .strength-bar {
     height: 4px;
@@ -281,8 +286,9 @@ body {
 
 .hint {
     font-family: "VT323", monospace;
-    font-size: 15px;
-    color: rgba(255,255,255,0.28);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--c5);
     letter-spacing: 1px;
     position: relative;
     z-index: 1;
@@ -314,9 +320,10 @@ body {
     background: var(--c4);
     border: none;
     border-radius: 9px;
-    color: #fff;
+    color: white;
     font-family: "Doto", sans-serif;
-    font-size: 16px;
+    font-weight: 800;
+    font-size: 18px;
     letter-spacing: 3px;
     cursor: pointer;
     box-shadow: 0 0 20px rgba(233,69,96,0.35);
@@ -334,7 +341,7 @@ body {
     border-radius: 9px;
     color: rgba(255,255,255,0.4);
     font-family: "VT323", monospace;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 2px;
     cursor: pointer;
     transition: border-color 0.2s, color 0.2s;
@@ -343,7 +350,8 @@ body {
 
 .toast {
     font-family: "Doto", sans-serif;
-    font-size: 13px;
+    font-size: 16px;
+    font-weight: 800;
     letter-spacing: 2px;
     color: #4ecca3;
     opacity: 0;

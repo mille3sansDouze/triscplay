@@ -247,7 +247,7 @@
     font-family: "VT323", monospace;
     font-weight: 600;
     font-size: 18px;
-    color: var(--c5)
+    color: white;
     letter-spacing: 2px;
     margin-bottom: 40px;
 }
