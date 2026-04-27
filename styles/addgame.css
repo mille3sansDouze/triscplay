@@ -147,7 +147,7 @@ main {
   transition: transform 1s ease;
 }
 .card:hover {
-    transform: scale(200%);
+    transform: scale(110%);
 }
 
 .card-inner {
