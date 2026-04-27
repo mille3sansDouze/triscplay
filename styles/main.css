@@ -235,6 +235,7 @@
 
 .page-title {
     font-family: "Doto", sans-serif;
+    font-weight:800;
     font-size: 42px;
     color: var(--c5);
     letter-spacing: 6px;
@@ -244,8 +245,9 @@
 
 .page-sub {
     font-family: "VT323", monospace;
+    font-weight: 600;
     font-size: 18px;
-    color: rgba(255,255,255,0.35);
+    color: var(--c5)
     letter-spacing: 2px;
     margin-bottom: 40px;
 }
@@ -275,7 +277,7 @@
 
 .card-label {
     font-family: "VT323", sans-serif;
-    font-size: 18px;
+    font-size: 24px;
     letter-spacing: 3px;
     color: white;
     opacity: 0.8;
@@ -290,8 +292,8 @@
 
 .card-desc {
     font-family: "VT323", monospace;
-    font-size: 17px;
-    color: rgba(255,255,255,0.4);
+    font-size: 20px;
+    color: var(--c5);
     letter-spacing: 1px;
 }
 

@@ -29,7 +29,7 @@ async function loadGame() {
             
             <div class="score-meta">
                 <div class="score-rank">#${index + 1}</div>
-                <div>${new Date(s.created_at).toLocaleDateString()}</div>
+                <div class="score-date">${new Date(s.created_at).toLocaleDateString()}</div>
             </div>
 
             <div class="score-bar">
